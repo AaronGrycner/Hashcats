@@ -15,7 +15,8 @@ add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.c
         include/messenger/ApprenticeMessenger.h
         src/messenger/MasterMessenger.cpp
         include/messenger/MasterMessenger.h
-        include/messenger/MessageTags.h)
+        include/messenger/MessageTags.h
+        test/tests.cpp)
 
 # Link with MPI
 target_link_libraries(Hashcats ${MPI_CXX_LIBRARIES})
