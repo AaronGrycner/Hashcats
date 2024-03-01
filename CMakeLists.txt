@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.5)
+project(Hashcats)
+
+set(CMAKE_CXX_STANDARD 23)
+
+# Find MPI
+find_package(MPI REQUIRED)
+
+# Include MPI headers
+include_directories(${MPI_CXX_INCLUDE_PATH} ./include ./include/messenger ./include/nodes)
+
+
+add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.cpp src/utils.cpp src/nodes/Node.cpp src/work.cpp
+        src/messenger/ApprenticeMessenger.cpp
+        include/messenger/ApprenticeMessenger.h
+        src/messenger/MasterMessenger.cpp
+        include/messenger/MasterMessenger.h
+        include/messenger/MessageTags.h)
+
+# Link with MPI
+target_link_libraries(Hashcats ${MPI_CXX_LIBRARIES})
