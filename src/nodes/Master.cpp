@@ -1,24 +1,23 @@
 #include "Master.h"
 
-#include "defs.h"
-
-#include <stdexcept>
-#include <iostream>
-#include <utility>
-
 Master::Master(const std::string &listname) : work((listname))
 {
+    listen();
 }
 
 void Master::run()
 {
-    work.split(worldsize); // Split the work into the number of apprentices
 
+    work.split(worldsize); // Split the work into the number of apprentices
 
 }
 
-void Master::sendHello(const int &dest)
-{
-    const messages::Hello hello(dest);
-    MPI_Send(hello.buf(), hello.count(), hello.datatype(), hello.dest(), hello.tag(), MPI_COMM_WORLD);
+void Master::findApprentices() {
+    apprenticelist.resize(worldsize);
+    int i{1};
+
+    for (ApprenticeInfo apprentice : apprenticelist) {
+        sendHello(i);
+        ++i;
+    }
 }

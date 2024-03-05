@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     if (utils::getRank() == 0)
     {
-        node = new Master();
+        node = new Master("wordlist.txt");
         node->run();
     }
 

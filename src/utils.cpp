@@ -1,7 +1,4 @@
 #include "utils.h"
-#include "defs.h"
-
-#include <fstream>
 
 #include <mpi/mpi.h>
 
