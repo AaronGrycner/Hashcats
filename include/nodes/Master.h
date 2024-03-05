@@ -2,13 +2,12 @@
 #define MASTER_H
 
 #include "Node.h"
-#include "MasterMessenger.h"
 #include "work.h"
 
-class Master : public Node {
+class Master final : public Node {
 private:
     Work work;
-    MasterMessenger messenger;
+    Messenger messenger;
     void readWordlist();
 
 public:

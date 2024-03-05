@@ -1,6 +1,6 @@
 # ninja log v5
 835	941	1709317970446810686	Hashcats	7573bc1f00ad872d
-1	1384	1709318448801573865	build.ninja	b22a6b96b7b25118
+1	1384	1709604628587751238	build.ninja	b22a6b96b7b25118
 629	1003	1709317371840456422	CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o	178377e5e0dee78a
 2	450	1709317906484836651	CMakeFiles/Hashcats.dir/src/messenger/MasterMessenger.cpp.o	4db8d2738fbad878
 2	424	1709315306925493846	CMakeFiles/Hashcats.dir/src/Apprentice.cpp.o	5ac09ce2e5c60c10
@@ -14,3 +14,9 @@
 1	751	1709266381205030854	CMakeFiles/Hashcats.dir/main.cpp.o	a51ba0ee5378ab74
 3	365	1709317969874793032	CMakeFiles/Hashcats.dir/src/messenger/ApprenticeMessenger.cpp.o	a8ae4a867c0bc809
 2	359	1709317969866792785	CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o	7d98bfcc3fbf6e14
+3	896	1709604668877024151	CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o	7d98bfcc3fbf6e14
+2	1147	1709604669129032112	CMakeFiles/Hashcats.dir/src/main.cpp.o	7ee16c06daeebe97
+3	34	1709604684517518300	CMakeFiles/Hashcats.dir/test/tests.cpp.o	1a4ae0b9b1c7b9ba
+3	814	1709604685297542945	CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o	178377e5e0dee78a
+3	923	1709604685405546356	CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o	f64d233ca7adfb1d
+923	1115	1709604685597552423	Hashcats	ff3e40c3879ed551

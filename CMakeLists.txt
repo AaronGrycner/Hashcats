@@ -11,12 +11,9 @@ include_directories(${MPI_CXX_INCLUDE_PATH} ./include ./include/messenger ./incl
 
 
 add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.cpp src/utils.cpp src/nodes/Node.cpp src/work.cpp
-        src/messenger/ApprenticeMessenger.cpp
-        include/messenger/ApprenticeMessenger.h
-        src/messenger/MasterMessenger.cpp
-        include/messenger/MasterMessenger.h
-        include/messenger/MessageTags.h
-        test/tests.cpp)
+        include/messenger/Message.h
+        test/tests.cpp
+)
 
 # Link with MPI
 target_link_libraries(Hashcats ${MPI_CXX_LIBRARIES})

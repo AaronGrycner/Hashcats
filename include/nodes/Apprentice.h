@@ -3,11 +3,9 @@
 
 #include "Node.h"
 
-#include "ApprenticeMessenger.h"
-
 class Apprentice : public Node {
 private:
-    ApprenticeMessenger messenger;
+    Messenger messenger;
     
 public:
     Apprentice()=default;
