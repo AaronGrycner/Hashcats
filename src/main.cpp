@@ -1,9 +1,5 @@
-#include "Master.h"
-#include "Apprentice.h"
 
-#include "utils.h"
-
-#include <mpi.h>
+#include "../test/messagingtest.h"
 
 // for this preliminary version, a hostfile and a wordlist should be placed in the same directory as the executable
 
@@ -16,25 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-    Node* node;
-
-    MPI_Init(&argc, &argv);
-
-    if (utils::getRank() == 0)
-    {
-        node = new Master("wordlist.txt");
-        node->run();
-    }
-
-    else
-    {
-        node = new Apprentice();
-        node->run();
-    }
-
-    MPI_Finalize();
-
-    delete node;
+    messageTest();
 
     return 0;
 }

@@ -8,6 +8,7 @@ private:
 
 public:
     Apprentice()=default;
+    ~Apprentice() override;
     void run() override;
 };
 

@@ -1,24 +1,23 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "Messages.h"
-
 #include <queue>
 
-using namespace messages;
+#include "Messages.h"
+
+using namespace messaging;
 
 class Node {
 protected:
     int rank, worldsize;
 
-    void listen();
-
-    messageData *data;
-    std::queue<Message> messages; // message queue
+    static void startListen(MessageData &msg);
+    static bool checkResponse(MessageData &data);
+    static void sendMessage(const Message &msg);
 
 public:
     Node();
-    virtual ~Node();
+    virtual ~Node() = default;
 
     virtual void run()=0;
 };

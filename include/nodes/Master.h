@@ -2,26 +2,20 @@
 #define MASTER_H
 
 #include "Node.h"
-#include "Work.h"
 #include "ApprenticeInfo.h"
 
-#include <queue>
-#include <mutex>
 
-using namespace messages;
+using namespace messaging;
 
 class Master final : public Node {
 private:
-    Work work;
-    static void sendHello(const int &dest);
-
-    void findApprentices();
-
+    void pingApprentices();
     std::vector<ApprenticeInfo> apprenticelist;
 
 public:
-    explicit Master(const std::string &listname);
+    explicit Master()=default;
     ~Master() override;
+
     void run() override;
 
 };

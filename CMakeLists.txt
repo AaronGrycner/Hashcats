@@ -7,12 +7,10 @@ set(CMAKE_CXX_STANDARD 23)
 find_package(MPI REQUIRED)
 
 # Include MPI headers
-include_directories(${MPI_CXX_INCLUDE_PATH} ./include ./include/nodes)
+include_directories(${MPI_CXX_INCLUDE_PATH} ./include ./include/nodes ./include/messaging ./test)
 
 add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.cpp src/utils.cpp src/nodes/Node.cpp src/Work.cpp
-        test/tests.cpp
-        include/Messages.h
-        include/defs.h
+        test/messagingtest.h
 )
 
 # Link with MPI

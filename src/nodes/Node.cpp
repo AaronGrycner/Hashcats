@@ -2,34 +2,39 @@
 
 #include "utils.h"
 
-Node::Node() : rank(utils::getRank()), worldsize(utils::getWorldSize()), request(nullptr), data(new messageData())
+Node::Node() : rank(utils::getRank()), worldsize(utils::getWorldSize())
 {
 }
 
-void Node::listen() {
+void Node::startListen(MessageData &data) {
 
     MPI_Irecv(
-        data->buf,
-        data->count,
-        data->datatype,
+        data.buf,
+        data.count,
+        data.datatype,
         MPI_ANY_SOURCE,
         MPI_ANY_TAG,
         MPI_COMM_WORLD,
-        &data->request
+        &data.request
         );
-
-    MPI_Test(&data->request,
-        &data->flag,
-        &data->status);
-
-    // read data from request if message was received
-    if (data->flag) {
-        data->source = data->status.MPI_SOURCE;
-        data->tag = data->status.MPI_TAG;
-    }
 }
 
-Node::~Node()
-{
-    delete data;
+bool Node::checkResponse(MessageData &data) {
+    MPI_Test(&data.request,
+        &data.flag,
+        &data.status
+        );
+
+    return data.flag;
+}
+
+
+void Node::sendMessage(const Message &msg) {
+    MPI_Send(msg.buf(),
+        msg.count(),
+        msg.datatype(),
+        msg.dest(),
+        msg.tag(),
+        MPI_COMM_WORLD
+        );
 }
