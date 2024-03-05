@@ -4,23 +4,21 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <utility>
 
-Master::Master() : work(WORDLIST)
+Master::Master(const std::string &listname) : work((listname))
 {
 }
 
 void Master::run()
 {
-    if (worldsize < 2) {
-        throw std::runtime_error("Worldsize must be at least 2");
-    }
-
     work.split(worldsize); // Split the work into the number of apprentices
 
 
 }
 
-void Master::readWordlist()
+void Master::sendHello(const int &dest)
 {
-    
+    const messages::Hello hello(dest);
+    MPI_Send(hello.buf(), hello.count(), hello.datatype(), hello.dest(), hello.tag(), MPI_COMM_WORLD);
 }

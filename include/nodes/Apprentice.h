@@ -5,8 +5,7 @@
 
 class Apprentice : public Node {
 private:
-    Messenger messenger;
-    
+
 public:
     Apprentice()=default;
     void run() override;

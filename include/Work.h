@@ -4,6 +4,10 @@
 #include <vector>
 #include <string>
 
+// Work class
+// This class is responsible for reading in the wordlist and splitting it into chunks for the apprentices to search
+// It also provides methods for getting the next work chunk and the wordlist itself
+
 class Work {
 private:
     std::vector<std::string> wordlist; // vector of strings, the wordlist read in from the file

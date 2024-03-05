@@ -2,18 +2,22 @@
 #define MASTER_H
 
 #include "Node.h"
-#include "work.h"
+#include "Work.h"
+
+#include <queue>
 
 class Master final : public Node {
 private:
     Work work;
-    Messenger messenger;
-    void readWordlist();
+    static void sendHello(const int &dest);
+    void listen();
+
+    std::queue<messages::Message> messages; // message queue
 
 public:
-    Master();
-
+    explicit Master(const std::string &listname);
     void run() override;
+
 };
 
 #endif

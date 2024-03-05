@@ -1,12 +1,11 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "Messenger.h"
+#include "Messages.h"
 
 class Node {
 protected:
     int rank, worldsize;
-    Messenger messenger;
 
 public:
     Node();
