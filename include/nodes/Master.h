@@ -4,9 +4,6 @@
 #include "Node.h"
 #include "ApprenticeInfo.h"
 
-
-using namespace messaging;
-
 class Master final : public Node {
 private:
     void pingApprentices();

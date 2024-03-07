@@ -6,7 +6,7 @@ Node::Node() : rank(utils::getRank()), worldsize(utils::getWorldSize())
 {
 }
 
-void Node::startListen(MessageData &data) {
+void Node::startListen(messages::MessageData &data) {
 
     MPI_Irecv(
         data.buf,
@@ -19,7 +19,7 @@ void Node::startListen(MessageData &data) {
         );
 }
 
-bool Node::checkResponse(MessageData &data) {
+bool Node::checkResponse(messages::MessageData &data) {
     MPI_Test(&data.request,
         &data.flag,
         &data.status
@@ -29,7 +29,7 @@ bool Node::checkResponse(MessageData &data) {
 }
 
 
-void Node::sendMessage(const Message &msg) {
+void Node::sendMessage(const messages::Message &msg) {
     MPI_Send(msg.buf(),
         msg.count(),
         msg.datatype(),

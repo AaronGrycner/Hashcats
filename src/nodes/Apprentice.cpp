@@ -4,7 +4,7 @@
 
 void Apprentice::run()
 {
-    MessageData data;
+    messages::MessageData data;
     startListen(data);
 
     while (true) {

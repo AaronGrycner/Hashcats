@@ -177,6 +177,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/messaging/Messages.o: src/messaging/Messages.cpp.o
+.PHONY : src/messaging/Messages.o
+
+# target to build an object file
+src/messaging/Messages.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messages.cpp.o
+.PHONY : src/messaging/Messages.cpp.o
+
+src/messaging/Messages.i: src/messaging/Messages.cpp.i
+.PHONY : src/messaging/Messages.i
+
+# target to preprocess a source file
+src/messaging/Messages.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messages.cpp.i
+.PHONY : src/messaging/Messages.cpp.i
+
+src/messaging/Messages.s: src/messaging/Messages.cpp.s
+.PHONY : src/messaging/Messages.s
+
+# target to generate assembly for a file
+src/messaging/Messages.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messages.cpp.s
+.PHONY : src/messaging/Messages.cpp.s
+
+src/messaging/Messenger.o: src/messaging/Messenger.cpp.o
+.PHONY : src/messaging/Messenger.o
+
+# target to build an object file
+src/messaging/Messenger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messenger.cpp.o
+.PHONY : src/messaging/Messenger.cpp.o
+
+src/messaging/Messenger.i: src/messaging/Messenger.cpp.i
+.PHONY : src/messaging/Messenger.i
+
+# target to preprocess a source file
+src/messaging/Messenger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messenger.cpp.i
+.PHONY : src/messaging/Messenger.cpp.i
+
+src/messaging/Messenger.s: src/messaging/Messenger.cpp.s
+.PHONY : src/messaging/Messenger.s
+
+# target to generate assembly for a file
+src/messaging/Messenger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messenger.cpp.s
+.PHONY : src/messaging/Messenger.cpp.s
+
 src/nodes/Apprentice.o: src/nodes/Apprentice.cpp.o
 .PHONY : src/nodes/Apprentice.o
 
@@ -288,6 +336,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/messaging/Messages.o"
+	@echo "... src/messaging/Messages.i"
+	@echo "... src/messaging/Messages.s"
+	@echo "... src/messaging/Messenger.o"
+	@echo "... src/messaging/Messenger.i"
+	@echo "... src/messaging/Messenger.s"
 	@echo "... src/nodes/Apprentice.o"
 	@echo "... src/nodes/Apprentice.i"
 	@echo "... src/nodes/Apprentice.s"

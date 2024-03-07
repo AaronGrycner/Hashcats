@@ -5,15 +5,13 @@
 
 #include "Messages.h"
 
-using namespace messaging;
-
 class Node {
 protected:
     int rank, worldsize;
 
-    static void startListen(MessageData &msg);
-    static bool checkResponse(MessageData &data);
-    static void sendMessage(const Message &msg);
+    static void startListen(messages::MessageData &msg);
+    static bool checkResponse(messages::MessageData &data);
+    static void sendMessage(const messages::Message &msg);
 
 public:
     Node();
