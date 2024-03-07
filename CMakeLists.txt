@@ -11,6 +11,10 @@ include_directories(${MPI_CXX_INCLUDE_PATH} ./include ./include/nodes ./include/
 
 add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.cpp src/utils.cpp src/nodes/Node.cpp src/Work.cpp
         test/messagingtest.h
+        include/messaging/Messages.h
+        src/messaging/Messages.cpp
+        src/messaging/Messenger.cpp
+        include/messaging/Messenger.h
 )
 
 # Link with MPI
