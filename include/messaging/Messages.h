@@ -13,21 +13,12 @@
  * This file contains the messages that are sent between the master and the apprentices.
  */
 
+
 namespace messages {
-
-    //
-    // enum for tags indicating what the message type is by the int tag value
-    //
-
     enum MessageTag {
         HELLO, // sent by the master to apprentices to see if they are online
         ACKNOWLEDGE, // acknowledges hello from apprentice to master
-        GOODBYE // sent to all processes and ends the MPI Session
     };
-
-    //
-    // struct to contain Message data
-    //
 
     struct MessageData {
         void *buf;
@@ -41,16 +32,12 @@ namespace messages {
         MPI_Status status;
     };
 
-    //
-    // parent message class
-    //
-
     class Message {
     protected:
-        MessageData _data{};
+        MessageData _data;
 
     public:
-        explicit Message()=default;
+        Message();
 
         explicit Message(const MessageData &data) : _data(data) { }
 
@@ -63,28 +50,25 @@ namespace messages {
         [[nodiscard]] int flag() const { return _data.flag; }
         [[nodiscard]] MPI_Request request() const { return _data.request; }
         [[nodiscard]] MPI_Status status() const { return _data.status; }
-        int send() const; // function to send the current message
     };
-
-    //
-    // child message types
-    //
 
     class Hello : public Message {
     public:
-        explicit Hello::Hello(const int &dest);
+        explicit Hello(const int &destination); // constructor for writing messages to be sent
+        explicit Hello(const MessageData &data) { _data = data; } // constuctor for reading in received messages
     };
 
     class Acknowledge : public Message {
     public:
-        explicit Acknowledge(const int &dest);
+        Acknowledge(); // constructor for writing messages to be sent
+        explicit Acknowledge(const MessageData &data) { _data = data; } // constuctor for reading in received messages
     };
 
     class Goodbye : public Message {
     public:
-        explicit Goodbye(const int &dest);
+        explicit Goodbye(const int &destination); // constructor for writing messages to be sent
+        explicit Goodbye(const MessageData &data) { _data = data; } // constuctor for reading in received messages
     };
-
 }
 
 
