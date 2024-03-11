@@ -21,7 +21,6 @@ Hello::Hello(const int &dest) {
     MPI_Comm_rank(MPI_COMM_WORLD, &_data.source);
 }
 
-
 // constructor for writing messages to be sent
 Acknowledge::Acknowledge(const int &dest) {
     _data.buf = nullptr;
