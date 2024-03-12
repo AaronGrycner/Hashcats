@@ -96,7 +96,7 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: \
  /usr/include/c++/11/backward/binders.h \
  /usr/include/c++/11/bits/stl_queue.h \
  /usr/include/c++/11/bits/uses_allocator.h \
- /home/aaron/Desktop/Yoshimi/Hashcats/./include/messaging/Messages.h \
+ /home/aaron/Desktop/Yoshimi/Hashcats/./include/messaging/Message.h \
  /home/aaron/Desktop/Yoshimi/Hashcats/./include/defs.h \
  /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
  /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
@@ -220,4 +220,5 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h
+ /usr/include/linux/close_range.h \
+ /home/aaron/Desktop/Yoshimi/Hashcats/./include/nodes/Apprentice.h

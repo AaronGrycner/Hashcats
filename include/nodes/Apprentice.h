@@ -5,11 +5,12 @@
 
 class Apprentice : public Node {
 private:
-
+    void handleAcknowledge(const Message &msg) override;
+    void handleGoodbye(const Message &msg) override;
+    void handleHello(const Message &msg) override;
 public:
     Apprentice()=default;
-    ~Apprentice() override;
-    void run() override;
+    ~Apprentice()override=default;
 };
 
 #endif

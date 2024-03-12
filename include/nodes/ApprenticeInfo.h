@@ -7,7 +7,7 @@
 
 struct ApprenticeInfo {
     int rank;
-    bool active;
+    bool active{false};
 };
 
 #endif //APPRENTICEINFO_H

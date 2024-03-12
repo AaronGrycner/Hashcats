@@ -4,22 +4,23 @@
 
 #include "Message.h"
 
+
 Message::Message(const int &dest, const MessageType &type) : _dest(dest), _tag(type) {
     MPI_Comm_rank(MPI_COMM_WORLD, &_source);
 }
 
-Message::Message(const MPI_Status &status) : _status(status) {
-    parseMPIStatus();
+Message::Message(const MPI_Status &status) {
+    parseMPIStatus(status);
 }
 
-void Message::parseMPIStatus() {
-    MPI_Get_count(&_status, _datatype, &_count);
-    _source = _status.MPI_SOURCE;
-    _error = _status.MPI_ERROR;
-    _tag = _status.MPI_TAG;
+void Message::parseMPIStatus(const MPI_Status &status) {
+    MPI_Get_count(&status, _datatype, &_count);
+    _source = status.MPI_SOURCE;
+    _error = status.MPI_ERROR;
+    _tag = status.MPI_TAG;
 }
 
-int Message::send() const {
-    return MPI_Send(_buf, _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+void Message::send() const {
+    MPI_Send(_buf, _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
 }
 

@@ -12,7 +12,11 @@
 
 int main(int argc, char *argv[])
 {
+    MPI_Init(nullptr, nullptr);
+
     messageTest();
+
+    MPI_Finalize();
 
     return 0;
 }

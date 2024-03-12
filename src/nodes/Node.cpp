@@ -2,31 +2,60 @@
 
 #include "utils.h"
 
+#include <thread>
+
 Node::Node() : rank(utils::getRank()), worldsize(utils::getWorldSize())
 {
 }
 
+void Node::sleep(const int &time) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(time));
+}
+
 void Node::handle(const Message &msg) {
-    switch (msg.type()) {
+    switch (msg.tag()) {
         case HELLO:
             handleHello(msg);
-            break;
+        break;
         case GOODBYE:
             handleGoodbye(msg);
-            break;
+        break;
         case ACKNOWLEDGE:
             handleAcknowledge(msg);
-            break;
+        break;
         default:
             throw;
     }
 }
 
-Message Node::listen() {
-    void *buf;
+// sends message, checks for response
+bool Node::send(const Message &msg) {
+    int flag{};
+    MPI_Request request;
     MPI_Status status;
 
-    MPI_Recv(buf, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+    msg.send();
 
-    return Message(status);
+    MPI_Irecv(nullptr, 0, msg.datatype(), msg.dest(), msg.tag(), MPI_COMM_WORLD, &request);
+
+    sleep(500);
+
+    return MPI_Test(&request, &flag, &status);
+}
+
+// listens for message, returns true if any message has been received
+bool Node::listen() {
+    MPI_Request request;
+    MPI_Status status;
+    int flag{};
+
+    MPI_Irecv(nullptr, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request);
+
+    sleep(500);
+
+    if (MPI_Test(&request, &flag, &status)) {
+        handle(Message(status));
+    }
+
+    return flag;
 }

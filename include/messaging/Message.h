@@ -29,10 +29,8 @@ private:
     int _source{};
     int _tag{};
     int _error{};
-    MPI_Status _status{};
-    MPI_Request _request{};
 
-    void parseMPIStatus();
+    void parseMPIStatus(const MPI_Status &status);
 
 public:
     Message()=default;
@@ -40,17 +38,14 @@ public:
 
     explicit Message(const int &dest, const MessageType &type);
 
-    int send() const;
+    void send() const;
 
-    void *buf() const { return _buf; }
     int count() const { return _count; }
     MPI_Datatype datatype() const { return _datatype; }
     int dest() const { return _dest; }
     int source() const { return _source; }
-    int type() const { return _tag; }
+    int tag() const { return _tag; }
     int error() const { return _error; }
-    MPI_Request request() const { return _request; }
-    MPI_Status status() const { return _status; }
 };
 
 

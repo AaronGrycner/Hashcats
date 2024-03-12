@@ -15,15 +15,16 @@ protected:
     virtual void handleAcknowledge(const Message &msg)=0;
     virtual void handleGoodbye(const Message &msg)=0;
 
+    void sleep(const int &time);
+
     void handle(const Message &msg);
 
 public:
     Node();
     virtual ~Node() = default;
 
-    virtual void run()=0;
-
-    Message listen();
+    bool send(const Message &msg); // returns true if ack is received
+    bool listen();
 
 };
 
