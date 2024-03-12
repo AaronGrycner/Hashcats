@@ -6,35 +6,27 @@ Node::Node() : rank(utils::getRank()), worldsize(utils::getWorldSize())
 {
 }
 
-void Node::startListen(messages::MessageData &data) {
-
-    MPI_Irecv(
-        data.buf,
-        data.count,
-        data.datatype,
-        MPI_ANY_SOURCE,
-        MPI_ANY_TAG,
-        MPI_COMM_WORLD,
-        &data.request
-        );
+void Node::handle(const Message &msg) {
+    switch (msg.type()) {
+        case HELLO:
+            handleHello(msg);
+            break;
+        case GOODBYE:
+            handleGoodbye(msg);
+            break;
+        case ACKNOWLEDGE:
+            handleAcknowledge(msg);
+            break;
+        default:
+            throw;
+    }
 }
 
-bool Node::checkResponse(messages::MessageData &data) {
-    MPI_Test(&data.request,
-        &data.flag,
-        &data.status
-        );
+Message Node::listen() {
+    void *buf;
+    MPI_Status status;
 
-    return data.flag;
-}
+    MPI_Recv(buf, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
-
-void Node::sendMessage(const messages::Message &msg) {
-    MPI_Send(msg.buf(),
-        msg.count(),
-        msg.datatype(),
-        msg.dest(),
-        msg.tag(),
-        MPI_COMM_WORLD
-        );
+    return Message(status);
 }

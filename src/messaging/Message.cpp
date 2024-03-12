@@ -4,32 +4,22 @@
 
 #include "Message.h"
 
-using namespace messages;
+Message::Message(const int &dest, const MessageType &type) : _dest(dest), _tag(type) {
+    MPI_Comm_rank(MPI_COMM_WORLD, &_source);
+}
+
+Message::Message(const MPI_Status &status) : _status(status) {
+    parseMPIStatus();
+}
+
+void Message::parseMPIStatus() {
+    MPI_Get_count(&_status, _datatype, &_count);
+    _source = _status.MPI_SOURCE;
+    _error = _status.MPI_ERROR;
+    _tag = _status.MPI_TAG;
+}
 
 int Message::send() const {
-    return MPI_Send(_data.buf, _data.count, _data.datatype, _data.dest, _data.tag, MPI_COMM_WORLD);
+    return MPI_Send(_buf, _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
 }
 
-Hello::Hello(const int &dest) : Message(dest) {
-    _data.buf = nullptr;
-    _data.count = 0;
-    _data.datatype = MPI_INT;
-    _data.tag = HELLO;
-    MPI_Comm_rank(MPI_COMM_WORLD, &_data.source);
-}
-
-Acknowledge::Acknowledge(const int &dest) : Message(dest) {
-    _data.buf = nullptr;
-    _data.count = 0;
-    _data.datatype = MPI_INT;
-    _data.tag = ACKNOWLEDGE;
-    MPI_Comm_rank(MPI_COMM_WORLD, &_data.source);
-}
-
-Goodbye::Goodbye(const int &dest) : Message(dest) {
-    _data.buf = nullptr;
-    _data.count = 0;
-    _data.datatype = MPI_INT;
-    _data.tag = GOODBYE;
-    MPI_Comm_rank(MPI_COMM_WORLD, &_data.source);
-}

@@ -3181,3 +3181,483 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-95xbWO"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-95xbWO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-95xbWO'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_33f82/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_33f82.dir/build.make CMakeFiles/cmTC_33f82.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-95xbWO'
+        Building C object CMakeFiles/cmTC_33f82.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_33f82.dir/test_mpi.c.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-95xbWO/test_mpi.c
+        Linking C executable cmTC_33f82
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33f82.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_33f82.dir/test_mpi.c.o -o cmTC_33f82  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-95xbWO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VABcSj"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VABcSj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VABcSj'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ae1b8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ae1b8.dir/build.make CMakeFiles/cmTC_ae1b8.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VABcSj'
+        Building CXX object CMakeFiles/cmTC_ae1b8.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_ae1b8.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VABcSj/test_mpi.cpp
+        Linking CXX executable cmTC_ae1b8
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae1b8.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_ae1b8.dir/test_mpi.cpp.o -o cmTC_ae1b8  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VABcSj'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kT1BJ3"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kT1BJ3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kT1BJ3'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d8d1b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d8d1b.dir/build.make CMakeFiles/cmTC_d8d1b.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kT1BJ3'
+        Building CXX object CMakeFiles/cmTC_d8d1b.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_d8d1b.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kT1BJ3/test_mpi.cpp
+        Linking CXX executable cmTC_d8d1b
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8d1b.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_d8d1b.dir/test_mpi.cpp.o -o cmTC_d8d1b  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-kT1BJ3'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4uw82w"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4uw82w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4uw82w'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c6ffe/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c6ffe.dir/build.make CMakeFiles/cmTC_c6ffe.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4uw82w'
+        Building C object CMakeFiles/cmTC_c6ffe.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_c6ffe.dir/test_mpi.c.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4uw82w/test_mpi.c
+        Linking C executable cmTC_c6ffe
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6ffe.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c6ffe.dir/test_mpi.c.o -o cmTC_c6ffe  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4uw82w'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9JFPt2"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9JFPt2"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9JFPt2'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3fc8f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3fc8f.dir/build.make CMakeFiles/cmTC_3fc8f.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9JFPt2'
+        Building CXX object CMakeFiles/cmTC_3fc8f.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_3fc8f.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9JFPt2/test_mpi.cpp
+        Linking CXX executable cmTC_3fc8f
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fc8f.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_3fc8f.dir/test_mpi.cpp.o -o cmTC_3fc8f  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9JFPt2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XfJRPH"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XfJRPH"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XfJRPH'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dc1f7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_dc1f7.dir/build.make CMakeFiles/cmTC_dc1f7.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XfJRPH'
+        Building CXX object CMakeFiles/cmTC_dc1f7.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_dc1f7.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XfJRPH/test_mpi.cpp
+        Linking CXX executable cmTC_dc1f7
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc1f7.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_dc1f7.dir/test_mpi.cpp.o -o cmTC_dc1f7  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XfJRPH'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1wxN7z"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1wxN7z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1wxN7z'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_19d16/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_19d16.dir/build.make CMakeFiles/cmTC_19d16.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1wxN7z'
+        Building C object CMakeFiles/cmTC_19d16.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_19d16.dir/test_mpi.c.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1wxN7z/test_mpi.c
+        Linking C executable cmTC_19d16
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19d16.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_19d16.dir/test_mpi.c.o -o cmTC_19d16  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1wxN7z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JizMGA"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JizMGA"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JizMGA'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a6dcc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a6dcc.dir/build.make CMakeFiles/cmTC_a6dcc.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JizMGA'
+        Building CXX object CMakeFiles/cmTC_a6dcc.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_a6dcc.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JizMGA/test_mpi.cpp
+        Linking CXX executable cmTC_a6dcc
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6dcc.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_a6dcc.dir/test_mpi.cpp.o -o cmTC_a6dcc  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JizMGA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-aj1JFC"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-aj1JFC"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-aj1JFC'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cadef/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cadef.dir/build.make CMakeFiles/cmTC_cadef.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-aj1JFC'
+        Building CXX object CMakeFiles/cmTC_cadef.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_cadef.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-aj1JFC/test_mpi.cpp
+        Linking CXX executable cmTC_cadef
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cadef.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_cadef.dir/test_mpi.cpp.o -o cmTC_cadef  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-aj1JFC'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VIOPHC"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VIOPHC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VIOPHC'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_910fa/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_910fa.dir/build.make CMakeFiles/cmTC_910fa.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VIOPHC'
+        Building C object CMakeFiles/cmTC_910fa.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_910fa.dir/test_mpi.c.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VIOPHC/test_mpi.c
+        Linking C executable cmTC_910fa
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_910fa.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_910fa.dir/test_mpi.c.o -o cmTC_910fa  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VIOPHC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SY8Bwg"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SY8Bwg"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SY8Bwg'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1cab9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1cab9.dir/build.make CMakeFiles/cmTC_1cab9.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SY8Bwg'
+        Building CXX object CMakeFiles/cmTC_1cab9.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_1cab9.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SY8Bwg/test_mpi.cpp
+        Linking CXX executable cmTC_1cab9
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cab9.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_1cab9.dir/test_mpi.cpp.o -o cmTC_1cab9  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SY8Bwg'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-63tzSU"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-63tzSU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-63tzSU'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_09719/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_09719.dir/build.make CMakeFiles/cmTC_09719.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-63tzSU'
+        Building CXX object CMakeFiles/cmTC_09719.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_09719.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-63tzSU/test_mpi.cpp
+        Linking CXX executable cmTC_09719
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09719.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_09719.dir/test_mpi.cpp.o -o cmTC_09719  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-63tzSU'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ufqLCi"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ufqLCi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ufqLCi'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c8faf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c8faf.dir/build.make CMakeFiles/cmTC_c8faf.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ufqLCi'
+        Building C object CMakeFiles/cmTC_c8faf.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_c8faf.dir/test_mpi.c.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ufqLCi/test_mpi.c
+        Linking C executable cmTC_c8faf
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8faf.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c8faf.dir/test_mpi.c.o -o cmTC_c8faf  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ufqLCi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qVJREi"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qVJREi"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qVJREi'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_efc31/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_efc31.dir/build.make CMakeFiles/cmTC_efc31.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qVJREi'
+        Building CXX object CMakeFiles/cmTC_efc31.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_efc31.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qVJREi/test_mpi.cpp
+        Linking CXX executable cmTC_efc31
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efc31.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_efc31.dir/test_mpi.cpp.o -o cmTC_efc31  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qVJREi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9O3TwP"
+      binary: "/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9O3TwP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9O3TwP'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5625f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5625f.dir/build.make CMakeFiles/cmTC_5625f.dir/build
+        gmake[1]: Entering directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9O3TwP'
+        Building CXX object CMakeFiles/cmTC_5625f.dir/test_mpi.cpp.o
+        /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_5625f.dir/test_mpi.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9O3TwP/test_mpi.cpp
+        Linking CXX executable cmTC_5625f
+        /home/aaron/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5625f.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_5625f.dir/test_mpi.cpp.o -o cmTC_5625f  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+        gmake[1]: Leaving directory '/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-9O3TwP'
+        
+      exitCode: 0
+...

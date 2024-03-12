@@ -13,9 +13,6 @@ add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.c
         test/messagingtest.h
         include/messaging/Message.h
         src/messaging/Message.cpp
-        src/messaging/Messenger.cpp
-        include/messaging/Messenger.h
-        include/messaging/Queue.h
 )
 
 # Link with MPI

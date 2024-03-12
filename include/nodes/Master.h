@@ -6,12 +6,17 @@
 
 class Master final : public Node {
 private:
-    void pingApprentices();
     std::vector<ApprenticeInfo> apprenticelist;
 
+    void handleAcknowledge(const Message &msg) override;
+    void handleHello(const Message &msg) override;
+    void handleGoodbye(const Message &msg) override;
+
+    void checkApprentices();
+
 public:
-    explicit Master()=default;
-    ~Master() override;
+    Master()=default;
+    ~Master()override=default;
 
     void run() override;
 

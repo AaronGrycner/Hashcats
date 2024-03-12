@@ -94,16 +94,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Messages.h">
-			<Option target="Hashcats"/>
-		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Messenger.h">
-			<Option target="Hashcats"/>
-		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Queue.cpp">
-			<Option target="Hashcats"/>
-		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Queue.h">
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Message.h">
 			<Option target="Hashcats"/>
 		</Unit>
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/Work.cpp">
@@ -112,10 +103,7 @@
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/main.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Messages.cpp">
-			<Option target="Hashcats"/>
-		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Messenger.cpp">
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Message.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Apprentice.cpp">

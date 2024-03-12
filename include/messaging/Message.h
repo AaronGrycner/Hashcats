@@ -13,65 +13,45 @@
  * This file contains the messages that are sent between the master and the apprentices.
  */
 
-namespace messages {
 
-    enum MessageTag {
-        HELLO, // sent by the master to apprentices to see if they are online
-        ACKNOWLEDGE, // acknowledges hello from apprentice to master
-        GOODBYE  // Goodbye
-    };
+enum MessageType {
+    HELLO, // sent by the master to apprentices to see if they are online
+    ACKNOWLEDGE, // acknowledges hello from apprentice to master
+    GOODBYE // Goodbye
+};
 
-    struct MessageData {
-        void *buf;
-        int count;
-        MPI_Datatype datatype;
-        int dest;
-        int source;
-        int tag;
-        int flag;
-        MPI_Request request;
-        MPI_Status status;
-    };
+class Message {
+private:
+    void *_buf{nullptr};
+    int _count{};
+    MPI_Datatype _datatype{MPI_CHAR};
+    int _dest{};
+    int _source{};
+    int _tag{};
+    int _error{};
+    MPI_Status _status{};
+    MPI_Request _request{};
 
-    class Message {
-    protected:
-        MessageData _data{};
+    void parseMPIStatus();
 
-    public:
-        explicit Message(const int &dest) { _data.dest = dest; }
-        explicit Message(const MessageData &data) : _data(data) { }
+public:
+    Message()=default;
+    Message(const MPI_Status &status);
 
-        [[nodiscard]] int send() const;
+    explicit Message(const int &dest, const MessageType &type);
 
-        [[nodiscard]] void *buf() const { return _data.buf; }
-        [[nodiscard]] int count() const { return _data.count; }
-        [[nodiscard]] MPI_Datatype datatype() const { return _data.datatype; }
-        [[nodiscard]] int dest() const { return _data.dest; }
-        [[nodiscard]] int source() const { return _data.source; }
-        [[nodiscard]] int tag() const { return _data.tag; }
-        [[nodiscard]] int flag() const { return _data.flag; }
-        [[nodiscard]] MPI_Request request() const { return _data.request; }
-        [[nodiscard]] MPI_Status status() const { return _data.status; }
-    };
+    int send() const;
 
-    class Hello : public Message {
-    public:
-        using Message::Message;
-        explicit Hello(const int &dest);
-    };
-
-    class Acknowledge : public Message {
-    public:
-        using Message::Message;
-        explicit Acknowledge(const int &dest);
-    };
-
-    class Goodbye : public Message {
-    public:
-        using Message::Message;
-        explicit Goodbye(const int &destination); // constructor for writing messages to be sent
-    };
-}
+    void *buf() const { return _buf; }
+    int count() const { return _count; }
+    MPI_Datatype datatype() const { return _datatype; }
+    int dest() const { return _dest; }
+    int source() const { return _source; }
+    int type() const { return _tag; }
+    int error() const { return _error; }
+    MPI_Request request() const { return _request; }
+    MPI_Status status() const { return _status; }
+};
 
 
 #endif //MESSAGES_H

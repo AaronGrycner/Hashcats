@@ -129,30 +129,6 @@ Hashcats/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/build
 .PHONY : Hashcats/fast
 
-include/messaging/Queue.o: include/messaging/Queue.cpp.o
-.PHONY : include/messaging/Queue.o
-
-# target to build an object file
-include/messaging/Queue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/include/messaging/Queue.cpp.o
-.PHONY : include/messaging/Queue.cpp.o
-
-include/messaging/Queue.i: include/messaging/Queue.cpp.i
-.PHONY : include/messaging/Queue.i
-
-# target to preprocess a source file
-include/messaging/Queue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/include/messaging/Queue.cpp.i
-.PHONY : include/messaging/Queue.cpp.i
-
-include/messaging/Queue.s: include/messaging/Queue.cpp.s
-.PHONY : include/messaging/Queue.s
-
-# target to generate assembly for a file
-include/messaging/Queue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/include/messaging/Queue.cpp.s
-.PHONY : include/messaging/Queue.cpp.s
-
 src/Work.o: src/Work.cpp.o
 .PHONY : src/Work.o
 
@@ -201,53 +177,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/messaging/Messages.o: src/messaging/Messages.cpp.o
-.PHONY : src/messaging/Messages.o
+src/messaging/Message.o: src/messaging/Message.cpp.o
+.PHONY : src/messaging/Message.o
 
 # target to build an object file
-src/messaging/Messages.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messages.cpp.o
-.PHONY : src/messaging/Messages.cpp.o
+src/messaging/Message.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o
+.PHONY : src/messaging/Message.cpp.o
 
-src/messaging/Messages.i: src/messaging/Messages.cpp.i
-.PHONY : src/messaging/Messages.i
-
-# target to preprocess a source file
-src/messaging/Messages.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messages.cpp.i
-.PHONY : src/messaging/Messages.cpp.i
-
-src/messaging/Messages.s: src/messaging/Messages.cpp.s
-.PHONY : src/messaging/Messages.s
-
-# target to generate assembly for a file
-src/messaging/Messages.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messages.cpp.s
-.PHONY : src/messaging/Messages.cpp.s
-
-src/messaging/Messenger.o: src/messaging/Messenger.cpp.o
-.PHONY : src/messaging/Messenger.o
-
-# target to build an object file
-src/messaging/Messenger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messenger.cpp.o
-.PHONY : src/messaging/Messenger.cpp.o
-
-src/messaging/Messenger.i: src/messaging/Messenger.cpp.i
-.PHONY : src/messaging/Messenger.i
+src/messaging/Message.i: src/messaging/Message.cpp.i
+.PHONY : src/messaging/Message.i
 
 # target to preprocess a source file
-src/messaging/Messenger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messenger.cpp.i
-.PHONY : src/messaging/Messenger.cpp.i
+src/messaging/Message.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.i
+.PHONY : src/messaging/Message.cpp.i
 
-src/messaging/Messenger.s: src/messaging/Messenger.cpp.s
-.PHONY : src/messaging/Messenger.s
+src/messaging/Message.s: src/messaging/Message.cpp.s
+.PHONY : src/messaging/Message.s
 
 # target to generate assembly for a file
-src/messaging/Messenger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Messenger.cpp.s
-.PHONY : src/messaging/Messenger.cpp.s
+src/messaging/Message.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.s
+.PHONY : src/messaging/Message.cpp.s
 
 src/nodes/Apprentice.o: src/nodes/Apprentice.cpp.o
 .PHONY : src/nodes/Apprentice.o
@@ -354,21 +306,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Hashcats"
-	@echo "... include/messaging/Queue.o"
-	@echo "... include/messaging/Queue.i"
-	@echo "... include/messaging/Queue.s"
 	@echo "... src/Work.o"
 	@echo "... src/Work.i"
 	@echo "... src/Work.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/messaging/Messages.o"
-	@echo "... src/messaging/Messages.i"
-	@echo "... src/messaging/Messages.s"
-	@echo "... src/messaging/Messenger.o"
-	@echo "... src/messaging/Messenger.i"
-	@echo "... src/messaging/Messenger.s"
+	@echo "... src/messaging/Message.o"
+	@echo "... src/messaging/Message.i"
+	@echo "... src/messaging/Message.s"
 	@echo "... src/nodes/Apprentice.o"
 	@echo "... src/nodes/Apprentice.i"
 	@echo "... src/nodes/Apprentice.s"
