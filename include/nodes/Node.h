@@ -3,7 +3,7 @@
 
 #include <queue>
 
-#include "Messages.h"
+#include "Message.h"
 
 class Node {
 protected:

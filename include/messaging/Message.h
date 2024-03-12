@@ -13,11 +13,12 @@
  * This file contains the messages that are sent between the master and the apprentices.
  */
 
-
 namespace messages {
+
     enum MessageTag {
         HELLO, // sent by the master to apprentices to see if they are online
         ACKNOWLEDGE, // acknowledges hello from apprentice to master
+        GOODBYE  // Goodbye
     };
 
     struct MessageData {
@@ -34,12 +35,13 @@ namespace messages {
 
     class Message {
     protected:
-        MessageData _data;
+        MessageData _data{};
 
     public:
-        Message();
-
+        explicit Message(const int &dest) { _data.dest = dest; }
         explicit Message(const MessageData &data) : _data(data) { }
+
+        [[nodiscard]] int send() const;
 
         [[nodiscard]] void *buf() const { return _data.buf; }
         [[nodiscard]] int count() const { return _data.count; }
@@ -54,20 +56,20 @@ namespace messages {
 
     class Hello : public Message {
     public:
-        explicit Hello(const int &destination); // constructor for writing messages to be sent
-        explicit Hello(const MessageData &data) { _data = data; } // constuctor for reading in received messages
+        using Message::Message;
+        explicit Hello(const int &dest);
     };
 
     class Acknowledge : public Message {
     public:
-        Acknowledge(); // constructor for writing messages to be sent
-        explicit Acknowledge(const MessageData &data) { _data = data; } // constuctor for reading in received messages
+        using Message::Message;
+        explicit Acknowledge(const int &dest);
     };
 
     class Goodbye : public Message {
     public:
+        using Message::Message;
         explicit Goodbye(const int &destination); // constructor for writing messages to be sent
-        explicit Goodbye(const MessageData &data) { _data = data; } // constuctor for reading in received messages
     };
 }
 

@@ -129,6 +129,30 @@ Hashcats/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/build
 .PHONY : Hashcats/fast
 
+include/messaging/Queue.o: include/messaging/Queue.cpp.o
+.PHONY : include/messaging/Queue.o
+
+# target to build an object file
+include/messaging/Queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/include/messaging/Queue.cpp.o
+.PHONY : include/messaging/Queue.cpp.o
+
+include/messaging/Queue.i: include/messaging/Queue.cpp.i
+.PHONY : include/messaging/Queue.i
+
+# target to preprocess a source file
+include/messaging/Queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/include/messaging/Queue.cpp.i
+.PHONY : include/messaging/Queue.cpp.i
+
+include/messaging/Queue.s: include/messaging/Queue.cpp.s
+.PHONY : include/messaging/Queue.s
+
+# target to generate assembly for a file
+include/messaging/Queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/include/messaging/Queue.cpp.s
+.PHONY : include/messaging/Queue.cpp.s
+
 src/Work.o: src/Work.cpp.o
 .PHONY : src/Work.o
 
@@ -330,6 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Hashcats"
+	@echo "... include/messaging/Queue.o"
+	@echo "... include/messaging/Queue.i"
+	@echo "... include/messaging/Queue.s"
 	@echo "... src/Work.o"
 	@echo "... src/Work.i"
 	@echo "... src/Work.s"

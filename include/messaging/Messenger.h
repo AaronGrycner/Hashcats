@@ -5,27 +5,29 @@
 #ifndef MESSENGER_H
 #define MESSENGER_H
 
-#include <queue>
+#include <atomic>
+#include <thread>
 
-#include "Messages.h"
+#include "Queue.h"
 
 using namespace messages;
 
 class Messenger {
 private:
-    std::queue<Message> recvQueue, sendQueue;
+    MessageQueue queue;
     bool _gotMail{false}; // true if there are messages in recvQueue, false if not
+    std::atomic<bool> done{false};
+
+    void listen();
 
 public:
     Messenger();
 
-    bool gotMail() const { return _gotMail; }
+    [[nodiscard]] bool gotMail() const { return _gotMail; }
 
     void sendMessage(const Message &msg);
-    Message getMessage(); // gets next message off the messagequeue
+    Message getNextMessage(); // gets next message off the messagequeue
 
 };
-
-
 
 #endif //MESSENGER_H
