@@ -4,6 +4,8 @@
 #include "Node.h"
 #include "ApprenticeInfo.h"
 
+#include <vector>
+
 class Master final : public Node {
 private:
     std::vector<ApprenticeInfo> apprenticeList;

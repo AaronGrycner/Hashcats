@@ -1,10 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include <queue>
-
 #include "Message.h"
-
 
 class Node {
 protected:

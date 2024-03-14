@@ -1,5 +1,7 @@
 
-#include "../test/messagingtest.h"
+#include "../test/test.h"
+
+
 
 // for this preliminary version, a hostfile and a wordlist should be placed in the same directory as the executable
 
@@ -10,13 +12,14 @@
 // -- add logging
 // -- add error handling
 
+#define TEST
+
 int main(int argc, char *argv[])
 {
-    MPI_Init(nullptr, nullptr);
 
+#ifdef TEST
     messageTest();
-
-    MPI_Finalize();
+#endif
 
     return 0;
 }

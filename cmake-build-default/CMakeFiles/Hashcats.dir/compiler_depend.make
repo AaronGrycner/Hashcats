@@ -209,11 +209,7 @@ CMakeFiles/Hashcats.dir/src/Work.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
 CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src/main.cpp \
   /home/aaron/Desktop/Yoshimi/Hashcats/include/defs.h \
   /home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Message.h \
-  /home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Apprentice.h \
-  /home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/ApprenticeInfo.h \
-  /home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Master.h \
-  /home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Node.h \
-  /home/aaron/Desktop/Yoshimi/Hashcats/test/messagingtest.h \
+  /home/aaron/Desktop/Yoshimi/Hashcats/test/test.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -232,7 +228,6 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/c++/11/bits/cpp_type_traits.h \
   /usr/include/c++/11/bits/cxxabi_forced.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
@@ -265,9 +260,7 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/stl_algobase.h \
-  /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/stl_construct.h \
-  /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/stl_function.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_iterator.h \
@@ -276,19 +269,15 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/stl_pair.h \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_tree.h \
-  /usr/include/c++/11/bits/stl_uninitialized.h \
-  /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/streambuf.tcc \
   /usr/include/c++/11/bits/streambuf_iterator.h \
   /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/cctype \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/clocale \
@@ -301,7 +290,6 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/c++/11/cwctype \
   /usr/include/c++/11/debug/assertions.h \
   /usr/include/c++/11/debug/debug.h \
-  /usr/include/c++/11/deque \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/ext/alloc_traits.h \
@@ -320,7 +308,6 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/c++/11/numbers \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
@@ -330,7 +317,6 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/c++/11/type_traits \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/utility \
-  /usr/include/c++/11/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -423,6 +409,9 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/mpi/mpi.h \
+  /usr/include/x86_64-linux-gnu/mpi/mpi_portable_platform.h \
+  /usr/include/x86_64-linux-gnu/mpi/openmpi/ompi/mpi/cxx/mpicxx.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
@@ -431,7 +420,6 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
-  /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm_inln.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/constants.h \
@@ -452,7 +440,6 @@ CMakeFiles/Hashcats.dir/src/main.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intercomm_inln.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intracomm.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intracomm_inln.h \
-  /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/op.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/op_inln.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request.h \
@@ -730,7 +717,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: /home/aaron/Desktop/Yoshimi/
   /usr/include/c++/11/bits/cpp_type_traits.h \
   /usr/include/c++/11/bits/cxxabi_forced.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
@@ -763,9 +749,7 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: /home/aaron/Desktop/Yoshimi/
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/stl_algobase.h \
-  /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/stl_construct.h \
-  /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/stl_function.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_iterator.h \
@@ -774,19 +758,15 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: /home/aaron/Desktop/Yoshimi/
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/stl_pair.h \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_tree.h \
-  /usr/include/c++/11/bits/stl_uninitialized.h \
-  /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/streambuf.tcc \
   /usr/include/c++/11/bits/streambuf_iterator.h \
   /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
   /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/cctype \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/clocale \
@@ -799,7 +779,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: /home/aaron/Desktop/Yoshimi/
   /usr/include/c++/11/cwctype \
   /usr/include/c++/11/debug/assertions.h \
   /usr/include/c++/11/debug/debug.h \
-  /usr/include/c++/11/deque \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/ext/alloc_traits.h \
@@ -818,7 +797,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: /home/aaron/Desktop/Yoshimi/
   /usr/include/c++/11/numbers \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
@@ -828,7 +806,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: /home/aaron/Desktop/Yoshimi/
   /usr/include/c++/11/type_traits \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/utility \
-  /usr/include/c++/11/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -995,7 +972,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: /home/aaron/Desktop/Yoshimi/Hash
   /usr/include/c++/11/bits/cpp_type_traits.h \
   /usr/include/c++/11/bits/cxxabi_forced.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
@@ -1030,7 +1006,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: /home/aaron/Desktop/Yoshimi/Hash
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/stl_construct.h \
-  /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/stl_function.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_iterator.h \
@@ -1039,7 +1014,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: /home/aaron/Desktop/Yoshimi/Hash
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/stl_pair.h \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_tree.h \
@@ -1064,7 +1038,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: /home/aaron/Desktop/Yoshimi/Hash
   /usr/include/c++/11/cwctype \
   /usr/include/c++/11/debug/assertions.h \
   /usr/include/c++/11/debug/debug.h \
-  /usr/include/c++/11/deque \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/ext/alloc_traits.h \
@@ -1083,7 +1056,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: /home/aaron/Desktop/Yoshimi/Hash
   /usr/include/c++/11/numbers \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
@@ -1263,7 +1235,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/bits/cpp_type_traits.h \
   /usr/include/c++/11/bits/cxxabi_forced.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
@@ -1301,9 +1272,7 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/bits/std_thread.h \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/stl_algobase.h \
-  /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/stl_construct.h \
-  /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/stl_function.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_iterator.h \
@@ -1312,12 +1281,9 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/stl_pair.h \
-  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_tree.h \
-  /usr/include/c++/11/bits/stl_uninitialized.h \
-  /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/streambuf.tcc \
   /usr/include/c++/11/bits/streambuf_iterator.h \
   /usr/include/c++/11/bits/string_view.tcc \
@@ -1326,7 +1292,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/bits/uniform_int_dist.h \
   /usr/include/c++/11/bits/unique_ptr.h \
   /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/cctype \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/chrono \
@@ -1342,7 +1307,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/cwctype \
   /usr/include/c++/11/debug/assertions.h \
   /usr/include/c++/11/debug/debug.h \
-  /usr/include/c++/11/deque \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/ext/alloc_traits.h \
@@ -1362,7 +1326,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/numbers \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/include/c++/11/queue \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/semaphore \
   /usr/include/c++/11/stdexcept \
@@ -1376,7 +1339,6 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashca
   /usr/include/c++/11/type_traits \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/utility \
-  /usr/include/c++/11/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -1779,10 +1741,6 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/win_inln.h
 
 
-/usr/include/x86_64-linux-gnu/mpi/openmpi/ompi/mpi/cxx/mpicxx.h:
-
-/usr/include/x86_64-linux-gnu/mpi/mpi.h:
-
 /home/aaron/Desktop/Yoshimi/Hashcats/src/utils.cpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
@@ -1823,11 +1781,19 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 
 /usr/include/c++/11/atomic:
 
+/home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/ApprenticeInfo.h:
+
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Node.h:
+
+/home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Apprentice.h:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h:
 
 /home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Message.cpp:
 
@@ -1846,8 +1812,6 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request_inln.h:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request.h:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h:
 
 /usr/include/unistd.h:
 
@@ -1879,19 +1843,15 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h:
 
-/usr/include/c++/11/queue:
+/usr/include/x86_64-linux-gnu/mpi/openmpi/ompi/mpi/cxx/mpicxx.h:
+
+/usr/include/x86_64-linux-gnu/mpi/mpi.h:
 
 /usr/include/c++/11/map:
 
-/usr/include/c++/11/deque:
-
 /usr/include/c++/11/bits/stl_tree.h:
 
-/usr/include/c++/11/bits/stl_queue.h:
-
 /usr/include/c++/11/bits/stl_multimap.h:
-
-/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/bits/invoke.h:
 
@@ -1900,12 +1860,6 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 /usr/include/c++/11/bits/atomic_timed_wait.h:
 
 /usr/include/c++/11/array:
-
-/home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Node.h:
-
-/home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/ApprenticeInfo.h:
-
-/home/aaron/Desktop/Yoshimi/Hashcats/include/nodes/Apprentice.h:
 
 /home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Message.h:
 
@@ -2281,6 +2235,8 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 
 /usr/include/features-time64.h:
 
+/home/aaron/Desktop/Yoshimi/Hashcats/test/test.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/features.h:
@@ -2290,8 +2246,6 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 /usr/include/wctype.h:
 
 /usr/include/strings.h:
-
-/home/aaron/Desktop/Yoshimi/Hashcats/test/messagingtest.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
@@ -2400,8 +2354,6 @@ CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/sr
 /usr/include/c++/11/typeinfo:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/c++/11/bits/deque.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
