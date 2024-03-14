@@ -22,7 +22,7 @@ enum MessageType {
 
 class Message {
 private:
-    void *_buf{nullptr};
+    void *_buf;
     int _count{};
     MPI_Datatype _datatype{MPI_CHAR};
     int _dest{};
@@ -38,8 +38,7 @@ public:
 
     explicit Message(const int &dest, const MessageType &type);
 
-    void send() const;
-
+    void * buf() const { return _buf; }
     int count() const { return _count; }
     MPI_Datatype datatype() const { return _datatype; }
     int dest() const { return _dest; }

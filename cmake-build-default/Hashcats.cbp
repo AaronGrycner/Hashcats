@@ -115,9 +115,6 @@
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Node.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/utils.cpp">
-			<Option target="Hashcats"/>
-		</Unit>
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/test/test.h">
 			<Option target="Hashcats"/>
 		</Unit>

@@ -1,10 +1,8 @@
 #include "Node.h"
 
-#include "utils.h"
-
 #include <thread>
 
-Node::Node() : rank(utils::getRank()), worldsize(utils::getWorldSize())
+Node::Node() : rank(getRank()), worldsize(getWorldSize())
 {
 }
 
@@ -28,34 +26,29 @@ void Node::handle(const Message &msg) {
     }
 }
 
-// sends message, checks for response
-bool Node::send(const Message &msg) {
-    int flag{};
-    MPI_Request request;
-    MPI_Status status;
-
-    msg.send();
-
-    MPI_Irecv(nullptr, 0, msg.datatype(), msg.dest(), msg.tag(), MPI_COMM_WORLD, &request);
-
-    sleep(500);
-
-    return MPI_Test(&request, &flag, &status);
-}
-
 // listens for message, returns true if any message has been received
-bool Node::listen() {
+bool Node::listen(Message &msg) {
     MPI_Request request;
     MPI_Status status;
-    int flag{};
 
-    MPI_Irecv(nullptr, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request);
-
-    sleep(500);
-
-    if (MPI_Test(&request, &flag, &status)) {
-        handle(Message(status));
+    if (MPI_Recv(nullptr, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status) == MPI_SUCCESS) {
+        msg = Message(status);
+        return true;
     }
 
-    return flag;
+    return false;
+}
+
+int Node::getRank()
+{
+    return MPI_Comm_rank(MPI_COMM_WORLD, nullptr);
+}
+
+int Node::getWorldSize()
+{
+    return MPI_Comm_size(MPI_COMM_WORLD, nullptr);
+}
+
+void Node::sendMessage(const Message &msg) {
+    MPI_Send(msg.buf(), msg.count(), msg.datatype(), msg.dest(), msg.tag(), MPI_COMM_WORLD);
 }

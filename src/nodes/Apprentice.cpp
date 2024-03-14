@@ -11,5 +11,4 @@ void Apprentice::handleGoodbye(const Message &msg) {
 }
 
 void Apprentice::handleHello(const Message &msg) {
-    Message(0, ACKNOWLEDGE).send();
 }

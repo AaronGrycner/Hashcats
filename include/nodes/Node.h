@@ -12,7 +12,7 @@ protected:
     virtual void handleAcknowledge(const Message &msg)=0;
     virtual void handleGoodbye(const Message &msg)=0;
 
-    void sleep(const int &time);
+    static void sleep(const int &time);
 
     void handle(const Message &msg);
 
@@ -20,8 +20,11 @@ public:
     Node();
     virtual ~Node() = default;
 
-    bool send(const Message &msg); // returns true if ack is received
-    bool listen();
+    static bool listen(Message &msg);
+    static void sendMessage(const Message &msg);
+
+    int getRank() const { return rank; }
+    int getWorldSize() const {return worldsize; }
 
 };
 

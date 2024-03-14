@@ -20,7 +20,3 @@ void Message::parseMPIStatus(const MPI_Status &status) {
     _tag = status.MPI_TAG;
 }
 
-void Message::send() const {
-    MPI_Send(_buf, _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
-}
-
