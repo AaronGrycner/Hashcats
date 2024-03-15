@@ -20,6 +20,8 @@ public:
 
     void pingApprentices();
 
+    void run() override;
+
 };
 
 #endif

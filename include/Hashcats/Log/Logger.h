@@ -6,9 +6,11 @@
 #include <fstream>
 #include <chrono>
 #include <unistd.h>
+#include <mutex>
 
 class Logger {
 private:
+    static std::mutex mtx;
     static std::chrono::system_clock clock;
     static std::string logName;
     static std::ofstream logFile;

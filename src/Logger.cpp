@@ -2,10 +2,12 @@
 
 #include <sstream>
 #include <iostream>
+#include <Node.h>
 
 std::ofstream Logger::logFile;
 std::string Logger::logName;
 std::chrono::system_clock Logger::clock;
+std::mutex Logger::mtx;
 
 std::string Logger::getCurrentTime() {
     // Get the current time as std::chrono::system_clock::time_point
@@ -26,12 +28,11 @@ std::string Logger::getCurrentTime() {
 }
 
 void Logger::init() {
-    logName = "logs/" + getCurrentTime() + ".log";
+    logName = "hashcats.log";
     logFile.open(logName);
 
-    system("rm logs/*");
-
     if (!logFile) {
+        log("throwing log exception!!");
         throw;
     }
 
@@ -39,6 +40,8 @@ void Logger::init() {
 }
 
 void Logger::log(const std::string &message) {
-    logFile << getCurrentTime() << " - " << message << std::endl;
-    std::cout << getCurrentTime() << "PID: " << getpid() << " - " << message << std::endl;
+    std::lock_guard<std::mutex> lock(mtx);
+    const std::string log{getCurrentTime() + " PID: " + std::to_string(getpid()) + " - " + message + '\n'};
+    logFile << log;
+    std::cout << log;
 }

@@ -11,15 +11,15 @@
 
 namespace utils {
 
-    inline void sleep(const int &time) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(time));
+    inline void sleep(const int &ms) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(ms));
     }
 
     inline void init() {
         int provided;
         MPI_Init_thread(nullptr, nullptr, MPI_THREAD_MULTIPLE, &provided);
     }
-    
+
 }
 
 #endif // UTILS_H

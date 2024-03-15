@@ -25,6 +25,8 @@ public:
     static int getWorldSize();
 
     static void init();
+    virtual void run()=0;
+
     void handle(const Message &msg);
 
 };

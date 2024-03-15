@@ -11,6 +11,9 @@ private:
 public:
     Apprentice()=default;
     ~Apprentice()override=default;
+
+    void run() override;
+
 };
 
 #endif

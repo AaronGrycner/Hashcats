@@ -3,23 +3,25 @@
 
 #include "Message.h"
 #include "Logger.h"
+#include "utils.h"
 
 Master::Master() {
     apprenticeList.resize(worldsize);
-    int i{};
 
     // set ranks
-    for (ApprenticeInfo apprentice : apprenticeList) {
+    for (int i{1}; i < worldsize; ++i) {
         Logger::log("Adding apprentice with rank " + std::to_string(i));
-        apprentice.rank = i;
-        ++i;
+        apprenticeList.at(i).rank = i;
     }
 }
 
 void Master::pingApprentices() {
     for (ApprenticeInfo apprentice : apprenticeList) {
-        Logger::log("Pinging apprentice with rank " + std::to_string(apprentice.rank));
-        sendMessage(Message(apprentice.rank, HELLO));
+        Logger::log("Apprentice rank: " + std::to_string(apprentice.rank) + ", active: " + std::to_string(apprentice.active) + ", rank: " + std::to_string(apprentice.rank) + ".");
+        if (apprentice.rank != 0) {
+            Logger::log("Pinging apprentice with rank " + std::to_string(apprentice.rank));
+            sendMessage(Message(apprentice.rank, HELLO));
+        }
     }
 }
 
@@ -37,4 +39,26 @@ void Master::handleHello(const Message &msg) {
 void Master::handleGoodbye(const Message &msg) {
     apprenticeList.at(msg.source()).active = false;
     Logger::log("Master::handleGoodbye - Goodbye received from " + std::to_string(msg.source()));
+}
+
+void Master::run() {
+    pingApprentices();
+    Message tmp;
+
+    while(!done) {
+        if (listen(tmp)) {
+            handle(tmp);
+        }
+
+        done = true;
+
+        for (auto apprentice : apprenticeList) {
+            if (!apprentice.active) {
+                done = false;
+                break;
+            }
+        }
+
+        utils::sleep(500);
+    }
 }

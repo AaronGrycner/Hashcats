@@ -17,32 +17,19 @@ inline void messageTest() {
         Logger::log("i am the master!");
         Master node;
 
-        Message msg;
-
         Logger::log("Multi thread MPI init success, world size: " + std::to_string(Node::getWorldSize()) + ", rank: " + std::to_string(Node::getRank()) + ".");
 
-        Logger::log("Pinging apprentices");
-        node.pingApprentices();
-        Logger::log("Ending ping");
+        node.run();
 
-        node.listen(msg);
-
-        node.handle(msg);
     }
 
     else {
         Logger::log("i am the apprentice!");
         Apprentice node;
-        Message msg;
 
-        Logger::log("Listening...");
+        node.run();
 
-        if (node.listen(msg)) {
-            node.handle(msg);
-        }
-        else {
-            std::cout << "Message receive fail.";
-        }
+
     }
 }
 
