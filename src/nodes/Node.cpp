@@ -1,13 +1,18 @@
 #include "Node.h"
 
-#include <thread>
+#include "Log/Logger.h"
+#include "Message.h"
 
-Node::Node() : rank(getRank()), worldsize(getWorldSize())
+Node::Node()
 {
+    // get mpi rank and world size
+    MPI_Comm_size(MPI_COMM_WORLD, &worldsize);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 }
 
-void Node::sleep(const int &time) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(time));
+Node::~Node()
+{
+    MPI_Finalize();
 }
 
 void Node::handle(const Message &msg) {
@@ -32,6 +37,7 @@ bool Node::listen(Message &msg) {
     MPI_Status status;
 
     if (MPI_Recv(nullptr, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status) == MPI_SUCCESS) {
+        Logger::log("Message received from: " + std::to_string(status.MPI_SOURCE) + " with tag: " + std::to_string(status.MPI_TAG));
         msg = Message(status);
         return true;
     }
@@ -41,12 +47,16 @@ bool Node::listen(Message &msg) {
 
 int Node::getRank()
 {
-    return MPI_Comm_rank(MPI_COMM_WORLD, nullptr);
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    return rank;
 }
 
 int Node::getWorldSize()
 {
-    return MPI_Comm_size(MPI_COMM_WORLD, nullptr);
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    return size;
 }
 
 void Node::sendMessage(const Message &msg) {

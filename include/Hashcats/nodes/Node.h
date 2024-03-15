@@ -1,7 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "Message.h"
+class Message;
 
 class Node {
 protected:
@@ -14,17 +14,18 @@ protected:
 
     static void sleep(const int &time);
 
-    void handle(const Message &msg);
-
 public:
     Node();
-    virtual ~Node() = default;
+    virtual ~Node();
 
-    static bool listen(Message &msg);
-    static void sendMessage(const Message &msg);
+    bool listen(Message &msg);
+    void sendMessage(const Message &msg);
 
-    int getRank() const { return rank; }
-    int getWorldSize() const {return worldsize; }
+    static int getRank();
+    static int getWorldSize();
+
+    static void init();
+    void handle(const Message &msg);
 
 };
 

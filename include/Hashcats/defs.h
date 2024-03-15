@@ -5,6 +5,6 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-const int BUFFER_SIZE{1024};
+#define TEST
 
 #endif //DEFS_H

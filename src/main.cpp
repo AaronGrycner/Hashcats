@@ -1,7 +1,4 @@
-
 #include "../test/test.h"
-
-
 
 // for this preliminary version, a hostfile and a wordlist should be placed in the same directory as the executable
 
@@ -14,7 +11,7 @@
 
 #define TEST
 
-int main(int argc, char *argv[])
+int main()
 {
 
 #ifdef TEST
@@ -23,3 +20,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+

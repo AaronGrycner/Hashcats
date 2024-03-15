@@ -5,8 +5,6 @@
 #ifndef MESSAGES_H
 #define MESSAGES_H
 
-#include "defs.h"
-
 #include <mpi.h>
 
 /*

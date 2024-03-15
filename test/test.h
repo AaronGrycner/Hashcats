@@ -3,35 +3,47 @@
 
 #include "Master.h"
 #include "Apprentice.h"
+#include "utils.h"
+#include "Logger.h"
+#include "Message.h"
 
 inline void messageTest() {
-    int provided, rank, size;
 
-    MPI_Init_thread(nullptr, nullptr, MPI_THREAD_MULTIPLE, &provided);
+    Logger::init();
 
-    if (rank == 0) {
-        Master mast;
-        const Message msg(1, HELLO);
+    utils::init();
 
-        std::cout << "Multi thread MPI init success, world size: " << size << std::endl;
+    if (Node::getRank() == 0) {
+        Logger::log("i am the master!");
+        Master node;
 
-        Master::sendMessage(Message(1, HELLO));
-    }
-
-    else if (rank == 1) {
-        Apprentice appr;
         Message msg;
 
-        if (Apprentice::listen(msg)) {
-            std::cout << "Message receive success!\n";
+        Logger::log("Multi thread MPI init success, world size: " + std::to_string(Node::getWorldSize()) + ", rank: " + std::to_string(Node::getRank()) + ".");
+
+        Logger::log("Pinging apprentices");
+        node.pingApprentices();
+        Logger::log("Ending ping");
+
+        node.listen(msg);
+
+        node.handle(msg);
+    }
+
+    else {
+        Logger::log("i am the apprentice!");
+        Apprentice node;
+        Message msg;
+
+        Logger::log("Listening...");
+
+        if (node.listen(msg)) {
+            node.handle(msg);
         }
         else {
             std::cout << "Message receive fail.";
         }
     }
-
-    MPI_Finalize();
-
 }
 
 #endif

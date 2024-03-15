@@ -52,51 +52,51 @@ build cmake_object_order_depends_target_Hashcats: phony || CMakeFiles/Hashcats.d
 build CMakeFiles/Hashcats.dir/src/main.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/main.cpp || cmake_object_order_depends_target_Hashcats
   DEP_FILE = CMakeFiles/Hashcats.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
   OBJECT_DIR = CMakeFiles/Hashcats.dir
   OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src
 
 build CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/nodes/Master.cpp || cmake_object_order_depends_target_Hashcats
   DEP_FILE = CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
   OBJECT_DIR = CMakeFiles/Hashcats.dir
   OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src/nodes
 
 build CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/nodes/Apprentice.cpp || cmake_object_order_depends_target_Hashcats
   DEP_FILE = CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
   OBJECT_DIR = CMakeFiles/Hashcats.dir
   OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src/nodes
-
-build CMakeFiles/Hashcats.dir/src/utils.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/utils.cpp || cmake_object_order_depends_target_Hashcats
-  DEP_FILE = CMakeFiles/Hashcats.dir/src/utils.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
-  OBJECT_DIR = CMakeFiles/Hashcats.dir
-  OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src
 
 build CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/nodes/Node.cpp || cmake_object_order_depends_target_Hashcats
   DEP_FILE = CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
   OBJECT_DIR = CMakeFiles/Hashcats.dir
   OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src/nodes
 
 build CMakeFiles/Hashcats.dir/src/Work.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/Work.cpp || cmake_object_order_depends_target_Hashcats
   DEP_FILE = CMakeFiles/Hashcats.dir/src/Work.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
   OBJECT_DIR = CMakeFiles/Hashcats.dir
   OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src
 
-build CMakeFiles/Hashcats.dir/test/tests.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/test/tests.cpp || cmake_object_order_depends_target_Hashcats
-  DEP_FILE = CMakeFiles/Hashcats.dir/test/tests.cpp.o.d
+build CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/messaging/Message.cpp || cmake_object_order_depends_target_Hashcats
+  DEP_FILE = CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/./include/nodes
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
   OBJECT_DIR = CMakeFiles/Hashcats.dir
-  OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/test
+  OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src/messaging
+
+build CMakeFiles/Hashcats.dir/src/Logger.cpp.o: CXX_COMPILER__Hashcats_unscanned_Debug /home/aaron/CLionProjects/Hashcats/src/Logger.cpp || cmake_object_order_depends_target_Hashcats
+  DEP_FILE = CMakeFiles/Hashcats.dir/src/Logger.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/home/aaron/CLionProjects/Hashcats/./include -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes -I/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging -I/home/aaron/CLionProjects/Hashcats/./test -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats -I/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log
+  OBJECT_DIR = CMakeFiles/Hashcats.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hashcats.dir/src
 
 
 # =============================================================================
@@ -106,7 +106,7 @@ build CMakeFiles/Hashcats.dir/test/tests.cpp.o: CXX_COMPILER__Hashcats_unscanned
 #############################################
 # Link the executable Hashcats
 
-build Hashcats: CXX_EXECUTABLE_LINKER__Hashcats_Debug CMakeFiles/Hashcats.dir/src/main.cpp.o CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o CMakeFiles/Hashcats.dir/src/utils.cpp.o CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o CMakeFiles/Hashcats.dir/src/Work.cpp.o CMakeFiles/Hashcats.dir/test/tests.cpp.o | /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
+build Hashcats: CXX_EXECUTABLE_LINKER__Hashcats_Debug CMakeFiles/Hashcats.dir/src/main.cpp.o CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o CMakeFiles/Hashcats.dir/src/Work.cpp.o CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o CMakeFiles/Hashcats.dir/src/Logger.cpp.o | /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
   OBJECT_DIR = CMakeFiles/Hashcats.dir
