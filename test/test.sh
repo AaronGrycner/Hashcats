@@ -1,0 +1,1 @@
+mpirun -n 2 /home/aaron/CLionProjects/Hashcats/cmake-build-debug/Hashcats
