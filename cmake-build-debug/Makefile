@@ -129,6 +129,30 @@ Hashcats/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/build
 .PHONY : Hashcats/fast
 
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/Work.o: src/Work.cpp.o
 .PHONY : src/Work.o
 
@@ -273,30 +297,6 @@ src/nodes/Node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.s
 .PHONY : src/nodes/Node.cpp.s
 
-src/utils.o: src/utils.cpp.o
-.PHONY : src/utils.o
-
-# target to build an object file
-src/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/utils.cpp.o
-.PHONY : src/utils.cpp.o
-
-src/utils.i: src/utils.cpp.i
-.PHONY : src/utils.i
-
-# target to preprocess a source file
-src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/utils.cpp.i
-.PHONY : src/utils.cpp.i
-
-src/utils.s: src/utils.cpp.s
-.PHONY : src/utils.s
-
-# target to generate assembly for a file
-src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hashcats.dir/build.make CMakeFiles/Hashcats.dir/src/utils.cpp.s
-.PHONY : src/utils.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Hashcats"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/Work.o"
 	@echo "... src/Work.i"
 	@echo "... src/Work.s"
@@ -324,9 +327,6 @@ help:
 	@echo "... src/nodes/Node.o"
 	@echo "... src/nodes/Node.i"
 	@echo "... src/nodes/Node.s"
-	@echo "... src/utils.o"
-	@echo "... src/utils.i"
-	@echo "... src/utils.s"
 .PHONY : help
 
 

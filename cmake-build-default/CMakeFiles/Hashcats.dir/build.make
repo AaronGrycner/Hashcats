@@ -111,24 +111,10 @@ CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Apprentice.cpp -o CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.s
 
-CMakeFiles/Hashcats.dir/src/utils.cpp.o: CMakeFiles/Hashcats.dir/flags.make
-CMakeFiles/Hashcats.dir/src/utils.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src/utils.cpp
-CMakeFiles/Hashcats.dir/src/utils.cpp.o: CMakeFiles/Hashcats.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Hashcats.dir/src/utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hashcats.dir/src/utils.cpp.o -MF CMakeFiles/Hashcats.dir/src/utils.cpp.o.d -o CMakeFiles/Hashcats.dir/src/utils.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/src/utils.cpp
-
-CMakeFiles/Hashcats.dir/src/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hashcats.dir/src/utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/Desktop/Yoshimi/Hashcats/src/utils.cpp > CMakeFiles/Hashcats.dir/src/utils.cpp.i
-
-CMakeFiles/Hashcats.dir/src/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hashcats.dir/src/utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Yoshimi/Hashcats/src/utils.cpp -o CMakeFiles/Hashcats.dir/src/utils.cpp.s
-
 CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: CMakeFiles/Hashcats.dir/flags.make
 CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Node.cpp
 CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o: CMakeFiles/Hashcats.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o -MF CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o.d -o CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Node.cpp
 
 CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.i: cmake_force
@@ -142,7 +128,7 @@ CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.s: cmake_force
 CMakeFiles/Hashcats.dir/src/Work.cpp.o: CMakeFiles/Hashcats.dir/flags.make
 CMakeFiles/Hashcats.dir/src/Work.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src/Work.cpp
 CMakeFiles/Hashcats.dir/src/Work.cpp.o: CMakeFiles/Hashcats.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Hashcats.dir/src/Work.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Hashcats.dir/src/Work.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hashcats.dir/src/Work.cpp.o -MF CMakeFiles/Hashcats.dir/src/Work.cpp.o.d -o CMakeFiles/Hashcats.dir/src/Work.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/src/Work.cpp
 
 CMakeFiles/Hashcats.dir/src/Work.cpp.i: cmake_force
@@ -156,7 +142,7 @@ CMakeFiles/Hashcats.dir/src/Work.cpp.s: cmake_force
 CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o: CMakeFiles/Hashcats.dir/flags.make
 CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Message.cpp
 CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o: CMakeFiles/Hashcats.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o -MF CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o.d -o CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Message.cpp
 
 CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.i: cmake_force
@@ -167,15 +153,29 @@ CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Message.cpp -o CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.s
 
+CMakeFiles/Hashcats.dir/src/Logger.cpp.o: CMakeFiles/Hashcats.dir/flags.make
+CMakeFiles/Hashcats.dir/src/Logger.cpp.o: /home/aaron/Desktop/Yoshimi/Hashcats/src/Logger.cpp
+CMakeFiles/Hashcats.dir/src/Logger.cpp.o: CMakeFiles/Hashcats.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Hashcats.dir/src/Logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Hashcats.dir/src/Logger.cpp.o -MF CMakeFiles/Hashcats.dir/src/Logger.cpp.o.d -o CMakeFiles/Hashcats.dir/src/Logger.cpp.o -c /home/aaron/Desktop/Yoshimi/Hashcats/src/Logger.cpp
+
+CMakeFiles/Hashcats.dir/src/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Hashcats.dir/src/Logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/Desktop/Yoshimi/Hashcats/src/Logger.cpp > CMakeFiles/Hashcats.dir/src/Logger.cpp.i
+
+CMakeFiles/Hashcats.dir/src/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Hashcats.dir/src/Logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Yoshimi/Hashcats/src/Logger.cpp -o CMakeFiles/Hashcats.dir/src/Logger.cpp.s
+
 # Object files for target Hashcats
 Hashcats_OBJECTS = \
 "CMakeFiles/Hashcats.dir/src/main.cpp.o" \
 "CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o" \
 "CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o" \
-"CMakeFiles/Hashcats.dir/src/utils.cpp.o" \
 "CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o" \
 "CMakeFiles/Hashcats.dir/src/Work.cpp.o" \
-"CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o"
+"CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o" \
+"CMakeFiles/Hashcats.dir/src/Logger.cpp.o"
 
 # External object files for target Hashcats
 Hashcats_EXTERNAL_OBJECTS =
@@ -183,10 +183,10 @@ Hashcats_EXTERNAL_OBJECTS =
 Hashcats: CMakeFiles/Hashcats.dir/src/main.cpp.o
 Hashcats: CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o
 Hashcats: CMakeFiles/Hashcats.dir/src/nodes/Apprentice.cpp.o
-Hashcats: CMakeFiles/Hashcats.dir/src/utils.cpp.o
 Hashcats: CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o
 Hashcats: CMakeFiles/Hashcats.dir/src/Work.cpp.o
 Hashcats: CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o
+Hashcats: CMakeFiles/Hashcats.dir/src/Logger.cpp.o
 Hashcats: CMakeFiles/Hashcats.dir/build.make
 Hashcats: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so
 Hashcats: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so

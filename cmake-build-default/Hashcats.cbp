@@ -27,9 +27,11 @@
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include"/>
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"/>
 					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/nodes"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/messaging"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/nodes"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/messaging"/>
 					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./test"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats/Log"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -55,9 +57,11 @@
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include"/>
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"/>
 					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/nodes"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/messaging"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/nodes"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/messaging"/>
 					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./test"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats"/>
+					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats/Log"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -94,7 +98,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/messaging/Message.h">
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/Log/Logger.h">
+			<Option target="Hashcats"/>
+		</Unit>
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/messaging/Message.h">
+			<Option target="Hashcats"/>
+		</Unit>
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/utils.h">
+			<Option target="Hashcats"/>
+		</Unit>
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/Logger.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/Work.cpp">

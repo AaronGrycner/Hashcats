@@ -1,33 +1,42 @@
 #ifndef NODE_H
 #define NODE_H
 
-class Message;
+#include <mpi.h>
+
+#include "defs.h"
+#include "Message.h"
 
 class Node {
 protected:
-    int rank, worldsize;
+    int rank{}, worldsize{};
     bool done{false};
+
+    char buffer[BUFFER_SIZE]{};
+
+    MPI_Request request;
+    MPI_Status status;
+    Message msgBuf;
 
     virtual void handleHello(const Message &msg)=0;
     virtual void handleAcknowledge(const Message &msg)=0;
     virtual void handleGoodbye(const Message &msg)=0;
 
-    static void sleep(const int &time);
-
 public:
     Node();
     virtual ~Node();
 
-    bool listen(Message &msg);
-    void sendMessage(const Message &msg);
+    bool startListen();
+
+    bool sendMessage(const Message &msg) const;
 
     static int getRank();
     static int getWorldSize();
 
-    static void init();
     virtual void run()=0;
 
     void handle(const Message &msg);
+
+    bool messageCheck();
 
 };
 

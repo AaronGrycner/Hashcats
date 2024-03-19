@@ -17,8 +17,13 @@ inline void messageTest() {
         Logger::log("i am the master!");
         Master node;
 
-        Logger::log("Multi thread MPI init success, world size: " + std::to_string(Node::getWorldSize()) + ", rank: " + std::to_string(Node::getRank()) + ".");
+        if (Node::getWorldSize() > 1) {
+            Logger::log("Multi thread MPI init success, world size: " + std::to_string(Node::getWorldSize()) + ", rank: " + std::to_string(Node::getRank()) + ".");
+        }
 
+        else {
+            Logger::log("MPI Failed to start multiple threads.");
+        }
         node.run();
 
     }

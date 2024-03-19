@@ -5,13 +5,37 @@
 #include "utils.h"
 
 Node::Node() {
-    // get mpi rank and world size
+
+    // get mpi rank and world sizes
     MPI_Comm_size(MPI_COMM_WORLD, &worldsize);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    if (startListen()) {
+        Logger::log("Node rank: " + std::to_string(rank) + " successfully started Irecv.");
+    }
+
+    else {
+        Logger::log("Node rank: " + std::to_string(rank) + " failed starting Irecv.");
+    }
+
 }
 
 Node::~Node() {
     MPI_Finalize();
+}
+
+bool Node::startListen() {
+    int ret{MPI_Irecv(buffer, sizeof(buffer), MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) == MPI_SUCCESS};
+
+    if (ret) {
+        Logger::log(std::to_string(rank) + " succesfully started async receive.");
+    }
+
+    else {
+        Logger::log(std::to_string(rank) + std::to_string(rank) + " failed to start async receive");
+    }
+
+    return ret;
 }
 
 void Node::handle(const Message&msg) {
@@ -33,31 +57,6 @@ void Node::handle(const Message&msg) {
     }
 }
 
-// listens for message, returns true if any message has been received
-bool Node::listen(Message&msg) {
-    MPI_Request request;
-    MPI_Status status;
-    int flag;
-
-    Logger::log("Beginning async receive...");
-    MPI_Irecv(nullptr, 0, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request);
-
-    int ret = MPI_Test(&request, &flag, &status);
-
-    if (ret == MPI_SUCCESS && flag) {
-        Logger::log(
-            "Message received from: " + std::to_string(status.MPI_SOURCE) + " with tag: " +
-            std::to_string(status.MPI_TAG));
-        msg = Message(status);
-        return true;
-    }
-
-    else {
-        Logger::log("MPI_Test failed with error code: " + std::to_string(ret) + ".");
-        return false;
-    }
-}
-
 int Node::getRank() {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -70,6 +69,37 @@ int Node::getWorldSize() {
     return size;
 }
 
-void Node::sendMessage(const Message&msg) {
-    MPI_Send(msg.buf(), msg.count(), msg.datatype(), msg.dest(), msg.tag(), MPI_COMM_WORLD);
+bool Node::sendMessage(const Message &msg) const {
+    bool ret{MPI_Send(msg.buf(), msg.count(), msg.datatype(), msg.dest(), msg.tag(), MPI_COMM_WORLD) == MPI_SUCCESS};
+
+    if (ret) {
+        Logger::log(std::to_string(rank) + " successfully sent message to " + std::to_string(msg.dest()));
+    }
+
+    else {
+        Logger::log(std::to_string(rank) + " failed to send message to " + std::to_string(msg.dest()));
+    }
+
+    return ret;
+}
+
+bool Node::messageCheck() {
+    int flag, ret{MPI_Test(&request, &flag, &status)};
+
+    if ((ret == MPI_SUCCESS) && flag) {
+        msgBuf = Message(status);
+        Logger::log(std::to_string(rank) + " successfully received message from " + std::to_string(msgBuf.source()));
+
+        startListen(); // restart async listen on successful message receive
+    }
+
+    else if ((ret == MPI_SUCCESS) && !flag) {
+        Logger::log(std::to_string(rank) + " succesfully checked messages but none found");
+    }
+
+    else {
+        Logger::log(std::to_string(rank) + " message check fail");
+    }
+
+    return (ret==MPI_SUCCESS) && flag;
 }

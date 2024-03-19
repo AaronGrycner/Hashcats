@@ -1,7 +1,7 @@
 CMakeFiles/Hashcats.dir/src/Work.cpp.o: \
  /home/aaron/Desktop/Yoshimi/Hashcats/src/Work.cpp \
  /usr/include/stdc-predef.h \
- /home/aaron/Desktop/Yoshimi/Hashcats/./include/Work.h \
+ /home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats/Work.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

@@ -3,6 +3,10 @@
 #include "Logger.h" // Ensure the Logger class is included
 #include "utils.h" // Ensure the utils namespace is included
 
+Apprentice::~Apprentice() {
+    Logger::log("Apprentice " + std::to_string(rank) + " exiting...");
+}
+
 void Apprentice::handleAcknowledge(const Message &msg) {
     Logger::log("Apprentice::handleAcknowledge - Acknowledgement received.");
 }
@@ -19,9 +23,8 @@ void Apprentice::handleHello(const Message &msg) {
 
 void Apprentice::run() {
     while (!done) {
-        Message tmp;
-        if (listen(tmp)) {
-            handle(tmp);
+        if (messageCheck()) {
+            handle(msgBuf);
             done = true;
         }
         utils::sleep(500);

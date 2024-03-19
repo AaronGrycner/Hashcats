@@ -16,7 +16,7 @@ private:
 
 public:
     Master();
-    ~Master()override=default;
+    ~Master()override;
 
     void pingApprentices();
 

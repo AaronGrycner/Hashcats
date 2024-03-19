@@ -8,9 +8,10 @@ private:
     void handleAcknowledge(const Message &msg) override;
     void handleGoodbye(const Message &msg) override;
     void handleHello(const Message &msg) override;
+
 public:
     Apprentice()=default;
-    ~Apprentice()override=default;
+    ~Apprentice()override;
 
     void run() override;
 

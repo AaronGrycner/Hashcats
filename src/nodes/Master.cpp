@@ -15,11 +15,15 @@ Master::Master() {
     }
 }
 
+Master::~Master() {
+    Logger::log("Master exiting...");
+}
+
 void Master::pingApprentices() {
+    utils::sleep(500); // sleep to allow time for apprentices to begin listening
+
     for (ApprenticeInfo apprentice : apprenticeList) {
-        Logger::log("Apprentice rank: " + std::to_string(apprentice.rank) + ", active: " + std::to_string(apprentice.active) + ", rank: " + std::to_string(apprentice.rank) + ".");
         if (apprentice.rank != 0) {
-            Logger::log("Pinging apprentice with rank " + std::to_string(apprentice.rank));
             sendMessage(Message(apprentice.rank, HELLO));
         }
     }
@@ -43,20 +47,11 @@ void Master::handleGoodbye(const Message &msg) {
 
 void Master::run() {
     pingApprentices();
-    Message tmp;
 
     while(!done) {
-        if (listen(tmp)) {
-            handle(tmp);
-        }
-
-        done = true;
-
-        for (auto apprentice : apprenticeList) {
-            if (!apprentice.active) {
-                done = false;
-                break;
-            }
+        if (messageCheck()) {
+            handle(msgBuf);
+            done = true;
         }
 
         utils::sleep(500);

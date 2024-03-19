@@ -2,7 +2,6 @@
 
 #include <sstream>
 #include <iostream>
-#include <Node.h>
 
 std::ofstream Logger::logFile;
 std::string Logger::logName;

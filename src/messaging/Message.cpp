@@ -4,7 +4,6 @@
 
 #include "Message.h"
 
-
 Message::Message(const int &dest, const MessageType &type) : _dest(dest), _tag(type) {
     MPI_Comm_rank(MPI_COMM_WORLD, &_source);
 }

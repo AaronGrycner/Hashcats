@@ -7,4 +7,6 @@
 
 #define TEST
 
+const uint8_t BUFFER_SIZE{255};
+
 #endif //DEFS_H

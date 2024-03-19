@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Hashcats.dir/src/Logger.cpp.o"
+  "CMakeFiles/Hashcats.dir/src/Logger.cpp.o.d"
   "CMakeFiles/Hashcats.dir/src/Work.cpp.o"
   "CMakeFiles/Hashcats.dir/src/Work.cpp.o.d"
   "CMakeFiles/Hashcats.dir/src/main.cpp.o"
@@ -11,8 +13,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hashcats.dir/src/nodes/Master.cpp.o.d"
   "CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o"
   "CMakeFiles/Hashcats.dir/src/nodes/Node.cpp.o.d"
-  "CMakeFiles/Hashcats.dir/src/utils.cpp.o"
-  "CMakeFiles/Hashcats.dir/src/utils.cpp.o.d"
   "Hashcats"
   "Hashcats.pdb"
 )
