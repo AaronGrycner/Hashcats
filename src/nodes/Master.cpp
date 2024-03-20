@@ -4,6 +4,7 @@
 #include "Message.h"
 #include "Logger.h"
 #include "utils.h"
+#include "Exceptions.h"
 
 Master::Master() {
     apprenticeList.resize(worldsize);
@@ -57,3 +58,36 @@ void Master::run() {
         utils::sleep(500);
     }
 }
+
+bool Master::sendWork(const std::vector<std::string> &work, const int &dest) {
+    if (!sendMessage(Message(dest, BEGIN))) {
+        throw NoResponse("No Acknowledge received on BEGIN from Master");
+    }
+
+    for (std::string word : work) {
+        setBuffer(word);
+
+        if (!sendMessage(Message(dest, WORK))) {
+
+        }
+    }
+}
+
+void Master::setBuffer(const std::string &string) {
+    int i{};
+
+    for (const char &c : string) {
+        if (i < BUFFER_SIZE) {
+            buffer[i] = c;
+            ++i;
+        }
+        else {
+            break;
+        }
+    }
+}
+
+bool Master::readWordlist(const std::string &filename) {
+
+}
+

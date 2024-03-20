@@ -34,7 +34,6 @@ inline void messageTest() {
 
         node.run();
 
-
     }
 }
 

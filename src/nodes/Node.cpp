@@ -3,9 +3,9 @@
 #include "Log/Logger.h"
 #include "Message.h"
 #include "utils.h"
+#include "Work.h"
 
 Node::Node() {
-
     // get mpi rank and world sizes
     MPI_Comm_size(MPI_COMM_WORLD, &worldsize);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -17,12 +17,9 @@ Node::Node() {
     else {
         Logger::log("Node rank: " + std::to_string(rank) + " failed starting Irecv.");
     }
-
 }
 
-Node::~Node() {
-    MPI_Finalize();
-}
+Node::~Node()=default;
 
 bool Node::startListen() {
     int ret{MPI_Irecv(buffer, sizeof(buffer), MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) == MPI_SUCCESS};

@@ -6,6 +6,8 @@
 #include "defs.h"
 #include "Message.h"
 
+class Work;
+
 class Node {
 protected:
     int rank{}, worldsize{};
@@ -23,7 +25,7 @@ protected:
 
 public:
     Node();
-    virtual ~Node();
+    virtual ~Node()=0;
 
     bool startListen();
 

@@ -15,7 +15,9 @@
 enum MessageType {
     HELLO, // sent by the master to apprentices to see if they are online
     ACKNOWLEDGE, // acknowledges hello from apprentice to master
-    GOODBYE // Goodbye
+    GOODBYE, // goodbye
+    BEGIN, // message to signal that master is ready to begin sending data
+    WORK
 };
 
 class Message {

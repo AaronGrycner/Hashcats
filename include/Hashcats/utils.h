@@ -20,6 +20,10 @@ namespace utils {
         MPI_Init_thread(nullptr, nullptr, MPI_THREAD_MULTIPLE, &provided);
     }
 
+    inline void finalize() {
+        MPI_Finalize();
+    }
+
 }
 
 #endif // UTILS_H

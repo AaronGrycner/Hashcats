@@ -98,6 +98,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/Exceptions.h">
+			<Option target="Hashcats"/>
+		</Unit>
 		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/Log/Logger.h">
 			<Option target="Hashcats"/>
 		</Unit>

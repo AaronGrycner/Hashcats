@@ -17,6 +17,7 @@ add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.c
         include/Hashcats/Log/Logger.h
         src/Logger.cpp
         include/Hashcats/Log/Logger.h
+        include/Hashcats/Exceptions.h
 )
 
 # Link with MPI
