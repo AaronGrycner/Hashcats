@@ -25,7 +25,8 @@ void Apprentice::handleWork(const Message &msg) {
     sendMessage(Message(msg.source(), ACKNOWLEDGE));
     Logger::log("Apprentice::handleWork - Responding with ACKNOWLEDGE.");
 
-    Logger::log(msg.data());
+    work = msg.getWork();
+    done = true;
 }
 
 void Apprentice::run() {
@@ -34,5 +35,14 @@ void Apprentice::run() {
             handle(msgBuf);
         }
         utils::sleep(500);
+    }
+    writeWork();
+}
+
+void Apprentice::writeWork() {
+    std::ofstream f(std::to_string(rank) + ".txt");
+
+    for(const auto &word : work) {
+        f << word << '\n';
     }
 }

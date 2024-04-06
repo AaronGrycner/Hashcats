@@ -22,10 +22,10 @@ Node::Node() {
 Node::~Node()=default;
 
 bool Node::startListen() {
-    int ret{MPI_Irecv(msgBuf.buf(), sizeof(msgBuf.buf()), MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) == MPI_SUCCESS};
+    int ret{MPI_Irecv(msgBuf.buf(), BUFFER_SIZE, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) == MPI_SUCCESS};
 
     if (ret) {
-        Logger::log(std::to_string(rank) + " succesfully started async receive.");
+        Logger::log(std::to_string(rank) + " successfully started async receive.");
     }
 
     else {

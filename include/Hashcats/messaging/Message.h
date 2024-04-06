@@ -35,6 +35,7 @@ public:
     Message(const int &dest, const MessageType &type, const Work &w);
 
     void parseMPIStatus(const MPI_Status &status);
+    Work getWork() const;
 
     char* buf() const;
     std::string data() const;

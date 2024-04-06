@@ -9,4 +9,6 @@
 
 const uint8_t BUFFER_SIZE{255};
 
+const std::string WORDLIST{"wordlist.txt"};
+
 #endif //DEFS_H

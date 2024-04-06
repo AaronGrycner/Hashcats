@@ -12,11 +12,16 @@ class Master final : public Node {
 private:
     std::vector<ApprenticeInfo> apprenticeList;
     std::vector<Work> workVec;
+    std::vector<std::string> wordlist;
 
     void handleAcknowledge(const Message &msg) override;
     void handleHello(const Message &msg) override;
     void handleGoodbye(const Message &msg) override;
     void handleWork(const Message &msg) override;
+
+    void splitWork();
+    void sendWork();
+    void readWordlist(const std::string &listname);
 
 public:
     Master();

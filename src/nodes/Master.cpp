@@ -14,6 +14,8 @@ Master::Master() {
         Logger::log("Adding apprentice with rank " + std::to_string(i));
         apprenticeList.at(i).rank = i;
     }
+
+    readWordlist(WORDLIST);
 }
 
 Master::~Master() {
@@ -21,8 +23,6 @@ Master::~Master() {
 }
 
 void Master::pingApprentices() {
-    utils::sleep(500); // sleep to allow time for apprentices to begin listening
-
     for (ApprenticeInfo apprentice : apprenticeList) {
         if (apprentice.rank != 0) {
             sendMessage(Message(apprentice.rank, HELLO));
@@ -48,9 +48,6 @@ void Master::handleGoodbye(const Message &msg) {
 
 void Master::run() {
     pingApprentices();
-    Work w;
-
-    w.emplace_back("hi!!!!!!");
 
     while(!done) {
         if (messageCheck()) {
@@ -61,15 +58,40 @@ void Master::run() {
         utils::sleep(500);
     }
 
-    sendMessage(Message(1, WORK, w));
-    utils::sleep(500);
-
-    sendMessage(Message(1, GOODBYE));
-    utils::sleep(500);
-
+    splitWork();
+    sendWork();
 }
 
 void Master::handleWork(const Message &msg) {
     // not needed
 }
 
+void Master::splitWork() {
+    int i{}, appNum{worldsize-1};
+
+    workVec.resize(worldsize - 1);
+
+    for (const std::string &word : wordlist) {
+        workVec.at(i % appNum).emplace_back(word);
+        ++i;
+    }
+}
+
+void Master::sendWork() {
+    for (const ApprenticeInfo &apprentice : apprenticeList) {
+        if (apprentice.rank != 0) {
+            Logger::log("Sending work to apprentice " + std::to_string(apprentice.rank));
+            sendMessage(Message(apprentice.rank, WORK, workVec.at(apprentice.rank - 1)));
+        }
+    }
+}
+
+void Master::readWordlist(const std::string &listname) {
+    std::string temp;
+    std::ifstream f(listname);
+
+    while(f.good()) {
+        getline(f, temp);
+        wordlist.emplace_back(temp);
+    }
+}

@@ -11,8 +11,6 @@ protected:
     int rank{}, worldsize{};
     bool done{false};
 
-    char buffer[1024];
-
     MPI_Request request;
     MPI_Status status;
     Message msgBuf;
