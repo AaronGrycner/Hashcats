@@ -6,14 +6,12 @@
 #include "defs.h"
 #include "Message.h"
 
-class Work;
-
 class Node {
 protected:
     int rank{}, worldsize{};
     bool done{false};
 
-    char buffer[BUFFER_SIZE]{};
+    char buffer[1024];
 
     MPI_Request request;
     MPI_Status status;
@@ -22,6 +20,7 @@ protected:
     virtual void handleHello(const Message &msg)=0;
     virtual void handleAcknowledge(const Message &msg)=0;
     virtual void handleGoodbye(const Message &msg)=0;
+    virtual void handleWork(const Message &msg)=0;
 
 public:
     Node();

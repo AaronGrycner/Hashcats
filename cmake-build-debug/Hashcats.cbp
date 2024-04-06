@@ -8,30 +8,30 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug"/>
+				<Option working_dir="/home/aaron/CLionProjects/Hashcats/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Hashcats">
-				<Option output="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Hashcats" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug"/>
+				<Option output="/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Hashcats" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/aaron/CLionProjects/Hashcats/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include"/>
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/nodes"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/messaging"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./test"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats/Log"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./include"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./test"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./include/Hashcats"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -41,27 +41,27 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 Hashcats"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 Hashcats"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Hashcats/fast">
-				<Option output="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Hashcats" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug"/>
+				<Option output="/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Hashcats" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/aaron/CLionProjects/Hashcats/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include"/>
 					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/nodes"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/messaging"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./test"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats"/>
-					<Add directory="/home/aaron/Desktop/Yoshimi/Hashcats/./include/Hashcats/Log"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./include"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/include/Hashcats/nodes"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./test"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./include/Hashcats"/>
+					<Add directory="/home/aaron/CLionProjects/Hashcats/./include/Hashcats/Log"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -71,70 +71,67 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 Hashcats/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 Hashcats/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug"/>
+				<Option working_dir="/home/aaron/CLionProjects/Hashcats/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug"/>
+				<Option working_dir="/home/aaron/CLionProjects/Hashcats/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/Desktop/Yoshimi/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/Exceptions.h">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/Exceptions.h">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/Log/Logger.h">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/Log/Logger.h">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/messaging/Message.h">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging/Message.h">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/include/Hashcats/utils.h">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/utils.h">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/Logger.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/Logger.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/Work.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/main.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/main.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/messaging/Message.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/messaging/Message.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/nodes/Apprentice.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Apprentice.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/nodes/Master.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Master.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/nodes/Node.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/src/nodes/Node.cpp">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/test/test.h">
 			<Option target="Hashcats"/>
 		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/test/test.h">
-			<Option target="Hashcats"/>
-		</Unit>
-		<Unit filename="/home/aaron/Desktop/Yoshimi/Hashcats/CMakeLists.txt">
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

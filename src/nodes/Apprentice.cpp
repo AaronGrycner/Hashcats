@@ -21,11 +21,17 @@ void Apprentice::handleHello(const Message &msg) {
     Logger::log("Apprentice::handleHello - Responding with ACKNOWLEDGE.");
 }
 
+void Apprentice::handleWork(const Message &msg) {
+    sendMessage(Message(msg.source(), ACKNOWLEDGE));
+    Logger::log("Apprentice::handleWork - Responding with ACKNOWLEDGE.");
+
+    Logger::log(msg.data());
+}
+
 void Apprentice::run() {
     while (!done) {
         if (messageCheck()) {
             handle(msgBuf);
-            done = true;
         }
         utils::sleep(500);
     }

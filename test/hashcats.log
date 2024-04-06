@@ -1,13 +1,23 @@
-2024-03-19 17:51:06 PID: 18202 - i am the master!
-2024-03-19 17:51:06 PID: 18202 - 0 succesfully started async receive.
-2024-03-19 17:51:06 PID: 18202 - Node rank: 0 successfully started Irecv.
-2024-03-19 17:51:06 PID: 18202 - Adding apprentice with rank 1
-2024-03-19 17:51:06 PID: 18202 - Multi thread MPI init success, world size: 2, rank: 0.
-2024-03-19 17:51:07 PID: 18202 - 0 successfully sent message to 1
-2024-03-19 17:51:07 PID: 18202 - 0 succesfully checked messages but none found
-2024-03-19 17:51:07 PID: 18202 - 0 succesfully checked messages but none found
-2024-03-19 17:51:08 PID: 18202 - 0 successfully received message from 1
-2024-03-19 17:51:08 PID: 18202 - 0 succesfully started async receive.
-2024-03-19 17:51:08 PID: 18202 - Handling acknowledge from 1.
-2024-03-19 17:51:08 PID: 18202 - Master::handleAcknowledge - Acknowledgement received from 1
-2024-03-19 17:51:08 PID: 18202 - Master exiting...
+2024-04-05 21:02:59 PID: 9938 - i am the apprentice!
+2024-04-05 21:02:59 PID: 9938 - 1 succesfully started async receive.
+2024-04-05 21:02:59 PID: 9938 - Node rank: 1 successfully started Irecv.
+2024-04-05 21:02:59 PID: 9938 - 1 succesfully checked messages but none found
+2024-04-05 21:02:59 PID: 9938 - 1 succesfully checked messages but none found
+2024-04-05 21:03:00 PID: 9938 - 1 successfully received message from 0
+2024-04-05 21:03:00 PID: 9938 - 1 succesfully started async receive.
+2024-04-05 21:03:00 PID: 9938 - Handling hello from 0.
+2024-04-05 21:03:00 PID: 9938 - 1 successfully sent message to 0 type: 1
+2024-04-05 21:03:00 PID: 9938 - Apprentice::handleHello - Responding with ACKNOWLEDGE.
+2024-04-05 21:03:00 PID: 9938 - 1 succesfully checked messages but none found
+2024-04-05 21:03:01 PID: 9938 - 1 succesfully checked messages but none found
+2024-04-05 21:03:01 PID: 9938 - 1 successfully received message from 0
+2024-04-05 21:03:01 PID: 9938 - 1 succesfully started async receive.
+2024-04-05 21:03:01 PID: 9938 - Handling work from 0.
+2024-04-05 21:03:01 PID: 9938 - 1 successfully sent message to 0 type: 1
+2024-04-05 21:03:01 PID: 9938 - Apprentice::handleWork - Responding with ACKNOWLEDGE.
+2024-04-05 21:03:01 PID: 9938 - hi!!!!!!
+2024-04-05 21:03:02 PID: 9938 - 1 successfully received message from 0
+2024-04-05 21:03:02 PID: 9938 - 1 succesfully started async receive.
+2024-04-05 21:03:02 PID: 9938 - Handling goodbye from 0.
+2024-04-05 21:03:02 PID: 9938 - Apprentice::handleGoodbye - Marking as done.
+2024-04-05 21:03:02 PID: 9938 - Apprentice 1 exiting...

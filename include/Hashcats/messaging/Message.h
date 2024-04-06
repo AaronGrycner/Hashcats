@@ -1,51 +1,49 @@
-//
-// Created by aaron on 3/1/24.
-//
+#ifndef MESSAGE_H
+#define MESSAGE_H
 
-#ifndef MESSAGES_H
-#define MESSAGES_H
-
+#include <memory>
+#include <string>
 #include <mpi.h>
-
-/*
- * This file contains the messages that are sent between the master and the apprentices.
- */
-
+#include "Work.h"
+#include "defs.h"
 
 enum MessageType {
     HELLO, // sent by the master to apprentices to see if they are online
     ACKNOWLEDGE, // acknowledges hello from apprentice to master
     GOODBYE, // goodbye
-    BEGIN, // message to signal that master is ready to begin sending data
     WORK
 };
 
 class Message {
 private:
-    void *_buf;
+    Work work;
+    std::unique_ptr<char[]> _buf;
     int _count{};
+
     MPI_Datatype _datatype{MPI_CHAR};
     int _dest{};
     int _source{};
     int _tag{};
     int _error{};
 
-    void parseMPIStatus(const MPI_Status &status);
+    void setBuffer();
 
 public:
-    Message()=default;
-    Message(const MPI_Status &status);
+    Message();
+    explicit Message(const MPI_Status &status);
+    Message(const int &dest, const MessageType &type);
+    Message(const int &dest, const MessageType &type, const Work &w);
 
-    explicit Message(const int &dest, const MessageType &type);
+    void parseMPIStatus(const MPI_Status &status);
 
-    void * buf() const { return _buf; }
-    int count() const { return _count; }
-    MPI_Datatype datatype() const { return _datatype; }
-    int dest() const { return _dest; }
-    int source() const { return _source; }
-    int tag() const { return _tag; }
-    int error() const { return _error; }
+    char* buf() const;
+    std::string data() const;
+    int count() const;
+    MPI_Datatype datatype() const;
+    int dest() const;
+    int source() const;
+    int tag() const;
+    int error() const;
 };
 
-
-#endif //MESSAGES_H
+#endif // MESSAGE_H

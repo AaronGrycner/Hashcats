@@ -6,7 +6,7 @@
 
 #include <vector>
 
-class Work;
+#include "Work.h"
 
 class Master final : public Node {
 private:
@@ -16,16 +16,11 @@ private:
     void handleAcknowledge(const Message &msg) override;
     void handleHello(const Message &msg) override;
     void handleGoodbye(const Message &msg) override;
-
-    void setBuffer(const std::string &str);
+    void handleWork(const Message &msg) override;
 
 public:
     Master();
     ~Master() override;
-
-    bool readWordlist(const std::string &list);
-
-    bool sendWork(const std::vector<std::string> &work, const int &dest);
 
     void pingApprentices();
     void run() override;

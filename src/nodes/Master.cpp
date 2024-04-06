@@ -48,6 +48,9 @@ void Master::handleGoodbye(const Message &msg) {
 
 void Master::run() {
     pingApprentices();
+    Work w;
+
+    w.emplace_back("hi!!!!!!");
 
     while(!done) {
         if (messageCheck()) {
@@ -57,37 +60,16 @@ void Master::run() {
 
         utils::sleep(500);
     }
+
+    sendMessage(Message(1, WORK, w));
+    utils::sleep(500);
+
+    sendMessage(Message(1, GOODBYE));
+    utils::sleep(500);
+
 }
 
-bool Master::sendWork(const std::vector<std::string> &work, const int &dest) {
-    if (!sendMessage(Message(dest, BEGIN))) {
-        throw NoResponse("No Acknowledge received on BEGIN from Master");
-    }
-
-    for (std::string word : work) {
-        setBuffer(word);
-
-        if (!sendMessage(Message(dest, WORK))) {
-
-        }
-    }
-}
-
-void Master::setBuffer(const std::string &string) {
-    int i{};
-
-    for (const char &c : string) {
-        if (i < BUFFER_SIZE) {
-            buffer[i] = c;
-            ++i;
-        }
-        else {
-            break;
-        }
-    }
-}
-
-bool Master::readWordlist(const std::string &filename) {
-
+void Master::handleWork(const Message &msg) {
+    // not needed
 }
 

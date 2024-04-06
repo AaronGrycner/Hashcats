@@ -35,6 +35,8 @@ inline void messageTest() {
         node.run();
 
     }
+
+    MPI_Finalize();
 }
 
 #endif

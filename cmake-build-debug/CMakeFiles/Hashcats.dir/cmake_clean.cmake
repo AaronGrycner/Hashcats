@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Hashcats.dir/src/Logger.cpp.o"
   "CMakeFiles/Hashcats.dir/src/Logger.cpp.o.d"
-  "CMakeFiles/Hashcats.dir/src/Work.cpp.o"
-  "CMakeFiles/Hashcats.dir/src/Work.cpp.o.d"
   "CMakeFiles/Hashcats.dir/src/main.cpp.o"
   "CMakeFiles/Hashcats.dir/src/main.cpp.o.d"
   "CMakeFiles/Hashcats.dir/src/messaging/Message.cpp.o"

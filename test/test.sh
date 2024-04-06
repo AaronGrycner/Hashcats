@@ -1,1 +1,1 @@
-mpirun -n 2 ../cmake-build-default/Hashcats
+mpirun -n 2 ../cmake-build-debug/Hashcats

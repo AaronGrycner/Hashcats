@@ -22,7 +22,7 @@ Node::Node() {
 Node::~Node()=default;
 
 bool Node::startListen() {
-    int ret{MPI_Irecv(buffer, sizeof(buffer), MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) == MPI_SUCCESS};
+    int ret{MPI_Irecv(msgBuf.buf(), sizeof(msgBuf.buf()), MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) == MPI_SUCCESS};
 
     if (ret) {
         Logger::log(std::to_string(rank) + " succesfully started async receive.");
@@ -49,6 +49,10 @@ void Node::handle(const Message&msg) {
             Logger::log("Handling acknowledge from " + std::to_string(msg.source()) + ".");
             handleAcknowledge(msg);
             break;
+        case WORK:
+            Logger::log("Handling work from " + std::to_string(msg.source()) + ".");
+            handleWork(msg);
+            break;
         default:
             throw;
     }
@@ -70,7 +74,7 @@ bool Node::sendMessage(const Message &msg) const {
     bool ret{MPI_Send(msg.buf(), msg.count(), msg.datatype(), msg.dest(), msg.tag(), MPI_COMM_WORLD) == MPI_SUCCESS};
 
     if (ret) {
-        Logger::log(std::to_string(rank) + " successfully sent message to " + std::to_string(msg.dest()));
+        Logger::log(std::to_string(rank) + " successfully sent message to " + std::to_string(msg.dest()) + " type: " + std::to_string(msg.tag()));
     }
 
     else {
@@ -84,7 +88,8 @@ bool Node::messageCheck() {
     int flag, ret{MPI_Test(&request, &flag, &status)};
 
     if ((ret == MPI_SUCCESS) && flag) {
-        msgBuf = Message(status);
+        msgBuf.parseMPIStatus(status);
+
         Logger::log(std::to_string(rank) + " successfully received message from " + std::to_string(msgBuf.source()));
 
         startListen(); // restart async listen on successful message receive
