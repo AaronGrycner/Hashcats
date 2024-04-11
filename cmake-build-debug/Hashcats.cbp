@@ -104,13 +104,19 @@
 		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/Log/Logger.h">
 			<Option target="Hashcats"/>
 		</Unit>
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/init/init.h">
+			<Option target="Hashcats"/>
+		</Unit>
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/init/network_check.h">
+			<Option target="Hashcats"/>
+		</Unit>
+		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/init/ssh_check.h">
+			<Option target="Hashcats"/>
+		</Unit>
 		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/messaging/Message.h">
 			<Option target="Hashcats"/>
 		</Unit>
 		<Unit filename="/home/aaron/CLionProjects/Hashcats/include/Hashcats/utils.h">
-			<Option target="Hashcats"/>
-		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/Logger.cpp">
 			<Option target="Hashcats"/>
 		</Unit>
 		<Unit filename="/home/aaron/CLionProjects/Hashcats/src/main.cpp">

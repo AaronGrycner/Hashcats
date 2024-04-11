@@ -3,10 +3,8 @@
 // for this preliminary version, a hostfile and a wordlist should be placed in the same directory as the executable
 
 // TODO
-// -- add environment setup to the makefile
-// -- add host discovery
-// -- add robust messenging
-// -- add logging
+// -- add ssh setup
+// -- add Host discovery
 // -- add error handling
 
 #define TEST

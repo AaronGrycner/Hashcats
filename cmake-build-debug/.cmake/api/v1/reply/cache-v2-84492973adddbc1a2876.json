@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "27"
+			"value" : "28"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "8"
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_CODEBLOCKS_COMPILER_ID",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.27"
+			"value" : "/home/aaron/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.28"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1316,6 +1316,30 @@
 			],
 			"type" : "STATIC",
 			"value" : "/home/aaron/CLionProjects/Hashcats"
+		},
+		{
+			"name" : "Libssh2_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Libssh2."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Libssh2_DIR-NOTFOUND"
+		},
+		{
+			"name" : "Libssh_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Libssh."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/libssh"
 		},
 		{
 			"name" : "MPIEXEC_EXECUTABLE",
@@ -1812,6 +1836,30 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
+		},
+		{
+			"name" : "libtins_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for libtins."
+				}
+			],
+			"type" : "PATH",
+			"value" : "libtins_DIR-NOTFOUND"
+		},
+		{
+			"name" : "tins_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for tins."
+				}
+			],
+			"type" : "PATH",
+			"value" : "tins_DIR-NOTFOUND"
 		}
 	],
 	"kind" : "cache",

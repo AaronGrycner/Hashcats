@@ -235,6 +235,12 @@ Hashcats_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Hashcats_SOURCE_DIR:STATIC=/home/aaron/CLionProjects/Hashcats
 
+//The directory containing a CMake configuration file for Libssh2.
+Libssh2_DIR:PATH=Libssh2_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Libssh.
+Libssh_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/libssh
+
 //Executable for running MPI programs.
 MPIEXEC_EXECUTABLE:FILEPATH=/usr/bin/mpiexec
 
@@ -321,6 +327,12 @@ ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
+//The directory containing a CMake configuration file for libtins.
+libtins_DIR:PATH=libtins_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for tins.
+tins_DIR:PATH=tins_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
@@ -335,9 +347,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/aaron/CLionProjects/Hashcats/cmake-build-debu
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=27
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=28
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=8
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=/home/aaron/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake
 //Path to cpack program executable.
@@ -444,7 +456,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/home/aaron/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.27
+CMAKE_ROOT:INTERNAL=/home/aaron/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.28
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG

@@ -4,14 +4,15 @@
 #include "Master.h"
 #include "Apprentice.h"
 #include "utils.h"
+#include "Hashcats/init/init.h"
 #include "Logger.h"
 #include "Message.h"
 
-inline void messageTest() {
+void messageTest() {
 
     Logger::init();
 
-    utils::init();
+    init::init();
 
     if (Node::getRank() == 0) {
         Logger::log("i am the master!");
@@ -37,6 +38,10 @@ inline void messageTest() {
     }
 
     MPI_Finalize();
+}
+
+void networkTest() {
+
 }
 
 #endif

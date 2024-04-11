@@ -15,10 +15,18 @@ add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.c
         src/messaging/Message.cpp
         include/Hashcats/utils.h
         include/Hashcats/Log/Logger.h
-        src/Logger.cpp
         include/Hashcats/Log/Logger.h
         include/Hashcats/Exceptions.h
+        include/Hashcats/init/init.h
+        include/Hashcats/init/network_check.h
+        include/Hashcats/init/ssh_check.h
 )
 
 # Link with MPI
 target_link_libraries(Hashcats ${MPI_CXX_LIBRARIES})
+
+# Include directories for libtins
+target_include_directories(Hashcats PRIVATE ${TINS_INCLUDE_DIRS})
+
+# Link libtins to the executable
+target_link_libraries(Hashcats ${TINS_LIBRARIES})
