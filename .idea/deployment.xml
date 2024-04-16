@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Pi (eb1dbf05-7bff-4625-b958-d3c5d2bbac82)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/Hashcats" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
