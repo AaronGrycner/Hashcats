@@ -1,15 +1,15 @@
-2024-04-16 14:28:21 PID: 15736 - i am the master!
-2024-04-16 14:28:21 PID: 15736 - 0 successfully started async receive.
-2024-04-16 14:28:21 PID: 15736 - Node rank: 0 successfully started Irecv.
-2024-04-16 14:28:21 PID: 15736 - Adding apprentice with rank 1
-2024-04-16 14:28:21 PID: 15736 - Multi thread MPI init success, world size: 2, rank: 0.
-2024-04-16 14:28:25 PID: 15736 - 0 successfully sent message to 1 type: 0
-2024-04-16 14:28:25 PID: 15736 - 0 succesfully checked messages but none found
-2024-04-16 14:28:26 PID: 15736 - 0 succesfully checked messages but none found
-2024-04-16 14:28:26 PID: 15736 - 0 successfully received message from 1
-2024-04-16 14:28:26 PID: 15736 - 0 successfully started async receive.
-2024-04-16 14:28:26 PID: 15736 - Handling acknowledge from 1.
-2024-04-16 14:28:26 PID: 15736 - Master::handleAcknowledge - Acknowledgement received from 1
-2024-04-16 14:28:27 PID: 15736 - Sending work to apprentice 1
-2024-04-16 14:28:27 PID: 15736 - 0 successfully sent message to 1 type: 3
-2024-04-16 14:28:27 PID: 15736 - Master exiting...
+2024-04-16 15:02:36 PID: 17167 - i am the master!
+2024-04-16 15:02:36 PID: 17167 - 0 successfully started async receive.
+2024-04-16 15:02:36 PID: 17167 - Node rank: 0 successfully started Irecv.
+2024-04-16 15:02:36 PID: 17167 - Adding apprentice with rank 1
+2024-04-16 15:02:36 PID: 17167 - Multi thread MPI init success, world size: 2, rank: 0.
+2024-04-16 15:02:40 PID: 17167 - 0 successfully sent message to 1 type: 0
+2024-04-16 15:02:40 PID: 17167 - 0 succesfully checked messages but none found
+2024-04-16 15:02:40 PID: 17167 - 0 succesfully checked messages but none found
+2024-04-16 15:02:41 PID: 17167 - 0 successfully received message from 1
+2024-04-16 15:02:41 PID: 17167 - 0 successfully started async receive.
+2024-04-16 15:02:41 PID: 17167 - Handling acknowledge from 1.
+2024-04-16 15:02:41 PID: 17167 - Master::handleAcknowledge - Acknowledgement received from 1
+2024-04-16 15:02:41 PID: 17167 - Sending work to apprentice 1
+2024-04-16 15:02:41 PID: 17167 - 0 successfully sent message to 1 type: 3
+2024-04-16 15:02:41 PID: 17167 - Master exiting...
