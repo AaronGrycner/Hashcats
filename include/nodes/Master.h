@@ -23,6 +23,8 @@ private:
     void sendWork();
     void readWordlist(const std::string &listname);
 
+    void resultListen();
+
 public:
     Master();
     ~Master() override;

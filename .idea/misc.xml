@@ -4,7 +4,7 @@
   <component name="CidrRootsConfiguration">
     <sourceRoots>
       <file path="$PROJECT_DIR$/include" />
-      <file path="$PROJECT_DIR$/include/Hashcats/init" />
+      <file path="$PROJECT_DIR$/include/init" />
       <file path="$PROJECT_DIR$/include/messaging" />
       <file path="$PROJECT_DIR$/include/nodes" />
       <file path="$PROJECT_DIR$/src" />
