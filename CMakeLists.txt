@@ -20,6 +20,8 @@ add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.c
         src/messaging/MessageFactory.cpp
         include/messaging/MessageFactory.h
         src/messaging/Messages.cpp
+        src/messaging/Messenger.cpp
+        include/messaging/Messenger.h
 )
 
 target_include_directories(Hashcats PRIVATE

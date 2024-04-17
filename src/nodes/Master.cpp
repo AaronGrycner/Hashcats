@@ -5,6 +5,8 @@
 #include "Logger.h"
 #include "utils.h"
 
+using namespace Messages;
+
 // Constructor: initializes the apprentice list and reads the word list from a predefined constant file path.
 Master::Master() {
     apprenticeList.resize(worldsize);  // Resize apprentice list to match the number of processes.
@@ -33,22 +35,31 @@ void Master::pingApprentices() {
 }
 
 // Handles acknowledge messages received from apprentices.
-void Master::handleAcknowledge(const Message &msg) {
+void Master::handleAcknowledge(const AcknowledgeMessage &msg) {
     Logger::log("Master::handleAcknowledge - Acknowledgement received from " + std::to_string(msg.source()));
     apprenticeList.at(msg.source()).active = true;  // Mark the apprentice as active upon receiving acknowledgment.
 }
 
 // Handles hello messages received from apprentices, and sends an acknowledgement back.
-void Master::handleHello(const Message &msg) {
+void Master::handleHello(const HelloMessage &msg) {
     apprenticeList.at(msg.source()).active = true;  // Mark the apprentice as active.
     Logger::log("Master::handleHello - Hello received from " + std::to_string(msg.source()));
     sendMessage(Message(msg.source(), ACKNOWLEDGE));  // Send an acknowledgement message back to the apprentice.
 }
 
 // Handles goodbye messages from apprentices, marking them as inactive.
-void Master::handleGoodbye(const Message &msg) {
+void Master::handleGoodbye(const GoodbyeMessage &msg) {
     apprenticeList.at(msg.source()).active = false;
     Logger::log("Master::handleGoodbye - Goodbye received from " + std::to_string(msg.source()));
+}
+
+// Handles work-related messages (not currently implemented as needed).
+void Master::handleWordlist(const WordlistMessage &msg) {
+    // Placeholder function for potential future use.
+}
+
+void Master::handlePcap(const PcapMessage &msg) {
+
 }
 
 // Main running loop for the Master.
@@ -68,10 +79,7 @@ void Master::run() {
     sendWork();  // Send out the work to each apprentice.
 }
 
-// Handles work-related messages (not currently implemented as needed).
-void Master::handleWork(const Message &msg) {
-    // Placeholder function for potential future use.
-}
+
 
 // Splits the word list into roughly equal parts for each apprentice.
 void Master::splitWork() {
@@ -110,3 +118,4 @@ void Master::readWordlist(const std::string &listname) {
 void Master::resultListen() {
     // Placeholder function for potential future use.
 }
+

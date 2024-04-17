@@ -3,10 +3,10 @@
 
 #include "Node.h"
 #include "ApprenticeInfo.h"
+#include "Work.h"
 
 #include <vector>
 
-#include "Work.h"
 
 class Master final : public Node {
 private:
@@ -14,10 +14,11 @@ private:
     std::vector<Work> workVec;
     std::vector<std::string> wordlist;
 
-    void handleAcknowledge(const Message &msg) override;
-    void handleHello(const Message &msg) override;
-    void handleGoodbye(const Message &msg) override;
-    void handleWork(const Message &msg) override;
+    void handleAcknowledge(const Messages::AcknowledgeMessage &msg) override;
+    void handleHello(const Messages::HelloMessage &msg) override;
+    void handleGoodbye(const Messages::GoodbyeMessage &msg) override;
+    void handleWordlist(const Messages::WordlistMessage &msg) override;
+    void handlePcap(const Messages::PcapMessage &msg) override;
 
     void splitWork();
     void sendWork();

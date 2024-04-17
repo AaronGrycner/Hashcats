@@ -7,6 +7,8 @@ class Apprentice : public Node {
 private:
     Work work;
 
+    ApprenticeMessenger messenger;
+
     void handleAcknowledge(const Message &msg) override;
     void handleGoodbye(const Message &msg) override;
     void handleHello(const Message &msg) override;

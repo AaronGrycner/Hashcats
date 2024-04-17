@@ -43,7 +43,7 @@ namespace Messages {
             MPI_Comm_rank(MPI_COMM_WORLD, &_source);
         }
 
-        virtual void send() = 0;
+        virtual void send();
 
         // Getters
         [[nodiscard]] char* buf() const { return _buf.get(); }
@@ -53,6 +53,15 @@ namespace Messages {
         [[nodiscard]] int source() const { return _source; }
         [[nodiscard]] int tag() const { return _tag; }
         [[nodiscard]] int error() const { return _error; }
+
+        // Setters
+        void set_dest(int dest) { _dest = dest; }
+        void set_tag(int tag) { _tag = tag; }
+        void set_error(int error) { _error = error; }
+        void set_source(int source) { _source = source; }
+        void set_count(int count) { _count = count; }
+        void set_datatype(MPI_Datatype datatype) { _datatype = datatype; }
+        void set_buf(std::unique_ptr<char[]> buf) { _buf = std::move(buf); }
     };
 
 
