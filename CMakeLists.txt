@@ -11,13 +11,15 @@ include_directories(${MPI_CXX_INCLUDE_PATH} ./include include/Hashcats/nodes inc
 
 add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.cpp src/nodes/Node.cpp
         test/test.h
-        include/messaging/Message.h
-        src/messaging/Message.cpp
+        include/messaging/Messages.h
         include/utils.h
         include/Log/Logger.h
-        src/Logger.cpp
+        src/Log/Logger.cpp
         include/Log/Logger.h
-        include/Exceptions.h
+        include/File/File.h
+        src/messaging/MessageFactory.cpp
+        include/messaging/MessageFactory.h
+        src/messaging/Messages.cpp
 )
 
 target_include_directories(Hashcats PRIVATE

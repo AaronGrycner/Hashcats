@@ -4,9 +4,9 @@
 #include "Master.h"
 #include "Apprentice.h"
 #include "utils.h"
-#include "Hashcats/init/init.h"
+#include "init.h"
 #include "Logger.h"
-#include "Message.h"
+#include "Messages.h"
 
 void messageTest() {
 

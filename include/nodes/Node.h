@@ -4,7 +4,7 @@
 #include <mpi.h>
 
 #include "defs.h"
-#include "Message.h"
+#include "Messages.h"
 
 class Node {
 protected:
