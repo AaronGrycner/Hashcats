@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install xterm -y
+
 # The MPI hostfile path
 HOSTFILE="../Hostfile/hostfile"
 

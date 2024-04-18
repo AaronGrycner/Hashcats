@@ -15,7 +15,9 @@ void Apprentice::run() {
     Logger::log("Apprentice " + std::to_string(rank) + " starting main loop.");
     while (!done) {  // Continue running until the done flag is set.
 
+        Logger::log("Apprentice " + std::to_string(rank) + " checking for messages.");  // Log the check for messages.
         if (messenger.check_for_message()) {  // Check for incoming messages.
+            Logger::log("Apprentice " + std::to_string(rank) + " received message!!!!.");
             msg_buf = messenger.get_message();  // Get the message buffer.
 
             if (msg_buf->type() == MessageType::HELLO) {  // Check if the message is a HELLO message.
@@ -24,7 +26,6 @@ void Apprentice::run() {
                 done = true;
             }
         }
-
         utils::sleep(500);  // Sleep for half a second to reduce CPU usage.
     }
 
@@ -54,6 +55,8 @@ void Apprentice::write_words() {
     if (f.is_open()) {
         f.write(wordlist.get_data().c_str(), static_cast<int>(wordlist.get_data().size()));
         f.close();
+
+        Logger::log("Successfully wrote work to file.");
     }
 
     else {

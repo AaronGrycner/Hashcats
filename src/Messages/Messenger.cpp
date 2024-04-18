@@ -26,21 +26,21 @@ void Messenger::reset_buffer() {
 }
 
 bool Messenger::check_for_message() {
-    int flag, ret{MPI_Test(&request, &flag, &status)};
     Logger::log(std::to_string(rank) + " checking for messages");
+    int flag, ret{MPI_Test(&request, &flag, &status)};
+    Logger::log(std::to_string(rank) + " checked for messages");
 
     if ((ret == MPI_SUCCESS) && flag) {
-        Logger::log(std::to_string(rank) + " successfully received message from " + std::to_string(msg_buf->source()) + " and adding to queue");
-
         msg_buf = MessageFactory::parse_MPI_Status(status, buffer);
 
-        reset_buffer();
+        Logger::log(std::to_string(rank) + " successfully received message from " + std::to_string(msg_buf->source()));
+
         startListen(); // restart async listen on successful message receive
 
         return true;
 
     } else if ((ret == MPI_SUCCESS) && !flag) {
-        Logger::log(std::to_string(rank) + " succesfully checked messages but none found");
+        Logger::log(std::to_string(rank) + " successfully checked messages but none found");
         return false;
     } else {
         Logger::log(std::to_string(rank) + " message check fail");
@@ -49,8 +49,11 @@ bool Messenger::check_for_message() {
 }
 
 bool Messenger::startListen() {
-    int ret{MPI_Irecv(buffer.data(), BUFFER_SIZE, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) ==
-            MPI_SUCCESS};
+    int ret;
+
+    reset_buffer();
+    ret = MPI_Irecv(buffer.data(), BUFFER_SIZE, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &request) ==
+          MPI_SUCCESS;
 
     if (ret) {
         Logger::log(std::to_string(rank) + " successfully started async receive.");

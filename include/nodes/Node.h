@@ -16,7 +16,7 @@ protected:
     MPI_Request request{};
     MPI_Status status{};
 
-    std::shared_ptr<Messages::Message> msg_buf{nullptr};
+    std::shared_ptr<Messages::Message> msg_buf = std::make_shared<Messages::Message>();
 
     Messenger messenger;
 

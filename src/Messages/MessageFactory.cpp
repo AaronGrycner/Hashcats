@@ -3,6 +3,7 @@
 //
 
 #include "Messages/MessageFactory.h"
+#include "Logger.h"
 
 #include <utility>
 
@@ -36,6 +37,7 @@ namespace Messages {
                 return msg;
 
             default:
+                Logger::log("Unrecognized message tag");
                 throw std::runtime_error("Unrecognized message tag");
         }
 

@@ -2,19 +2,21 @@
 #include <iostream>
 #include <vector>
 
+#include "Logger.h"  // Make sure this includes the definition of Logger class
 #include "FileData/FileData.h"
-#include "Messages.h"
 
 namespace FileData {
 
     FileData::FileData(const std::string &p) {
+        Logger::log("Initializing FileData with path: " + p);
         read_file(p);
     }
 
     void FileData::read_file(const std::string &path) {
+        Logger::log("Attempting to read file: " + path);
         std::ifstream file(path, std::ios::binary); // Open in binary mode to avoid platform-specific line ending conversions
         if (!file) {
-            std::cerr << "Failed to open file: " << path << std::endl;
+            Logger::log("Failed to open file: " + path);
             return; // Optionally handle this more robustly, e.g., by setting an error state
         }
 
@@ -25,23 +27,26 @@ namespace FileData {
         // Reserve memory for the entire file content and read it in one go
         data.resize(fileSize); // Use resize to allocate exact memory needed
         if (!file.read(&data[0], static_cast<int>(fileSize))) {
-            std::cerr << "Error reading file: " << path << std::endl;
+            Logger::log("Error reading file: " + path);
             data.clear(); // Clear data if read fails
+        } else {
+            Logger::log("File read successfully: " + path);
         }
     }
 
     FileData::FileData(std::unique_ptr<char[]> data) {
         this->data = std::string(data.get(), BUFFER_SIZE);
+        Logger::log("Initialized FileData with data from unique_ptr.");
     }
 
     std::vector<WordlistData> WordlistData::split(int chunks) {
+        Logger::log("Splitting data into " + std::to_string(chunks) + " chunks.");
         std::vector<WordlistData> result(chunks);  // Pre-allocate vector with empty WordlistData elements
         size_t start = 0;
         size_t end;
         int index = 0;
 
         while (start < data.length() && index < chunks) {
-            // Find the next newline character from 'start'
             end = data.find('\n', start);
             if (end == std::string::npos) {
                 end = data.length();  // If no newline found, use the end of the string
@@ -59,6 +64,7 @@ namespace FileData {
             }
         }
 
+        Logger::log("Data split successfully.");
         return result;
     }
 }
