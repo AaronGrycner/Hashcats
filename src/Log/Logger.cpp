@@ -36,11 +36,13 @@ void Logger::init() {
     }
 
     system("mkdir -p logs");
+
+    // Set std::cout to flush after every insert operation
+    std::cout.setf(std::ios::unitbuf);
 }
 
 void Logger::log(const std::string &message) {
     std::lock_guard<std::mutex> lock(mtx);
     const std::string log{getCurrentTime() + " PID: " + std::to_string(getpid()) + " - " + message + '\n'};
-    logFile << log;
     std::cout << log;
 }

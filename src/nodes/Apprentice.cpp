@@ -3,56 +3,56 @@
 #include "Logger.h" // Include the Logger class for logging messages.
 #include "utils.h" // Include the utils namespace for utility functions such as sleep.
 
+using namespace Messages;
+
 // Destructor logs the exiting message, noting the rank of the Apprentice.
 Apprentice::~Apprentice() {
     Logger::log("Apprentice " + std::to_string(rank) + " exiting...");
 }
 
-// Handles acknowledge messages received from the Master.
-void Apprentice::handleAcknowledge(const Message &msg) {
-    Logger::log("Apprentice::handleAcknowledge - Acknowledgement received.");
-}
-
-// Handles goodbye messages from the Master and marks the apprentice as done.
-void Apprentice::handleGoodbye(const Message &msg) {
-    done = true;  // Set the done flag to true, indicating the apprentice should stop running.
-    Logger::log("Apprentice::handleGoodbye - Marking as done.");
-}
-
-// Handles hello messages from the Master by sending back an acknowledgment.
-void Apprentice::handleHello(const Message &msg) {
-    sendMessage(Message(msg.source(), ACKNOWLEDGE));  // Send an acknowledge message back to the Master.
-    Logger::log("Apprentice::handleHello - Responding with ACKNOWLEDGE.");
-}
-
-// Handles work messages from the Master by acknowledging receipt and storing the work.
-void Apprentice::handleWork(const Message &msg) {
-    sendMessage(Message(msg.source(), ACKNOWLEDGE));  // Respond with an acknowledgment to confirm receipt.
-    Logger::log("Apprentice::handleWork - Responding with ACKNOWLEDGE.");
-    work = msg.getWork();  // Store the work received in the message.
-
-    done = true;  // Set the done flag to true to indicate the apprentice should stop running.
-}
-
 // Main running loop for the Apprentice.
 void Apprentice::run() {
+    Logger::log("Apprentice " + std::to_string(rank) + " starting main loop.");
     while (!done) {  // Continue running until the done flag is set.
-        if (messageCheck()) {  // Check for incoming messages.
-            handle(msgBuf);  // Handle any messages that have been received.
+
+        if (messenger.check_for_message()) {  // Check for incoming messages.
+            msg_buf = messenger.get_message();  // Get the message buffer.
+
+            if (msg_buf->type() == MessageType::HELLO) {  // Check if the message is a HELLO message.
+                Logger::log("Received HELLO from master.");  // Log the receipt of the HELLO message.
+                messenger.send_acknowledge(0);  // Send an ACKNOWLEDGE message to the master.
+                done = true;
+            }
         }
+
         utils::sleep(500);  // Sleep for half a second to reduce CPU usage.
     }
 
-    writeWork();
+    done = false;
+
+    while (!done) {
+        if (messenger.check_for_message()) {
+            msg_buf = messenger.get_message();
+
+            if (msg_buf->type() == MessageType::WORDLIST) {
+                std::shared_ptr<WordlistMessage> wordlist_msg = std::dynamic_pointer_cast<WordlistMessage>(msg_buf);
+                Logger::log("Received word list from master.");
+
+                wordlist = wordlist_msg->get_file_data();
+                done = true;
+            }
+        }
+        utils::sleep(500);
+    }
+
+    write_words();
 }
 
-void Apprentice::writeWork() {
+void Apprentice::write_words() {
     std::ofstream f("work.txt");
 
     if (f.is_open()) {
-        for (const auto &word : work) {
-            f << word << std::endl;
-        }
+        f.write(wordlist.get_data().c_str(), static_cast<int>(wordlist.get_data().size()));
         f.close();
     }
 

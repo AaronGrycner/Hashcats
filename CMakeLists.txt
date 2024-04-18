@@ -10,23 +10,38 @@ find_package(MPI REQUIRED)
 include_directories(${MPI_CXX_INCLUDE_PATH} ./include include/Hashcats/nodes include/Hashcats/messaging ./test ./include/Hashcats ./include/Hashcats/Log)
 
 add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.cpp src/nodes/Node.cpp
-        test/test.h
-        include/messaging/Messages.h
-        include/utils.h
+        include/FileData/FileData.h
+        src/FileData/FileData.cpp
+
         include/Log/Logger.h
         src/Log/Logger.cpp
-        include/Log/Logger.h
-        include/File/File.h
-        src/messaging/MessageFactory.cpp
-        include/messaging/MessageFactory.h
-        src/messaging/Messages.cpp
-        src/messaging/Messenger.cpp
-        include/messaging/Messenger.h
+
+        src/Messages/MessageFactory.cpp
+        include/Messages/MessageFactory.h
+
+        include/Messages/Messages.h
+
+        src/Messages/Messenger.cpp
+        include/Messages/Messenger.h
+
+        include/nodes/Apprentice.h
+        src/nodes/Apprentice.cpp
+
+        include/nodes/Master.h
+        src/nodes/Master.cpp
+
+        include/nodes/Node.h
+        src/nodes/Node.cpp
+
+        test/test.h
+
+        include/utils.h
 )
 
 target_include_directories(Hashcats PRIVATE
                             include
-                            include/messaging
+                            include/FileData
+                            include/Messages
                             include/nodes
                             include/Log)
 

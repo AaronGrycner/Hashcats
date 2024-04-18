@@ -10,21 +10,20 @@
 
 class Node {
 protected:
-    std::unique_ptr<char[]> buffer{new char[BUFFER_SIZE]};
-
     int rank{}, worldsize{};
     bool done{false};
 
     MPI_Request request{};
     MPI_Status status{};
 
+    std::shared_ptr<Messages::Message> msg_buf{nullptr};
+
     Messenger messenger;
 
-    virtual void handleHello(const Messages::HelloMessage &msg)=0;
-    virtual void handleAcknowledge(const Messages::AcknowledgeMessage &msg)=0;
-    virtual void handleGoodbye(const Messages::GoodbyeMessage &msg)=0;
-    virtual void handleWordlist(const Messages::WordlistMessage &msg)=0;
-    virtual void handlePcap(const Messages::PcapMessage &msg)=0;
+    FileData::PcapData pcap;
+    FileData::WordlistData wordlist;
+
+
 
 public:
     Node();

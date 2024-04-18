@@ -7,6 +7,7 @@
 // -- add host discovery
 // -- add logging
 // -- add error handling
+// -- add shared_pointer memory management
 
 #define TEST
 

@@ -19,6 +19,18 @@ namespace utils {
         MPI_Init(nullptr, nullptr);
     }
 
+    inline int get_world_size() {
+        int world_size;
+        MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+        return world_size;
+    }
+
+    inline int get_rank() {
+        int rank;
+        MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+        return rank;
+    }
+
     inline void finalize() {
         MPI_Finalize();
     }

@@ -5,15 +5,13 @@
 #include <string>
 #include <mpi.h>
 
-#include "MessageTags.h"
-#include "Work.h"
 #include "defs.h"
-#include "File/File.h"
+#include "FileData/FileData.h"
 
 namespace Messages {
 
     // Enum class defining types of messages that can be sent or received.
-    enum class MessageType {
+    enum MessageType {
         HELLO,        // Sent by the master to apprentices to check if they are online.
         ACKNOWLEDGE,  // Sent in response to a HELLO, acknowledging receipt.
         GOODBYE,      // Indicates a connection or session is being closed.
@@ -24,7 +22,7 @@ namespace Messages {
     // Parent class representing an MPI message with encapsulation for MPI-specific details.
     class Message {
     protected:
-        std::unique_ptr<char[]> _buf{std::make_unique<char[]>(BUFFER_SIZE)};   // Buffer for message data.
+        std::string _buf;   // Buffer for message data.
         int _count{};                   // Number of elements in the buffer.
 
         MPI_Datatype _datatype{MPI_CHAR}; // Type of data in the MPI message, default is char.
@@ -33,25 +31,18 @@ namespace Messages {
         int _tag{};                       // Tag to identify the message type.
         int _error{};                     // Error status of the message operation.
 
-        inline void setBuffer(std::string &data) {
-            _count = data.size();
-            std::copy(data.begin(), data.end(), _buf.get());
-        }
-
     public:
-        Message() {
-            MPI_Comm_rank(MPI_COMM_WORLD, &_source);
-        }
+        Message()=default;
 
         virtual void send();
 
         // Getters
-        [[nodiscard]] char* buf() const { return _buf.get(); }
+        [[nodiscard]] std::string buf() const { return _buf; }
         [[nodiscard]] int count() const { return _count; }
         [[nodiscard]] MPI_Datatype datatype() const { return _datatype; }
         [[nodiscard]] int dest() const { return _dest; }
         [[nodiscard]] int source() const { return _source; }
-        [[nodiscard]] int tag() const { return _tag; }
+        [[nodiscard]] int type() const { return _tag; }
         [[nodiscard]] int error() const { return _error; }
 
         // Setters
@@ -61,7 +52,7 @@ namespace Messages {
         void set_source(int source) { _source = source; }
         void set_count(int count) { _count = count; }
         void set_datatype(MPI_Datatype datatype) { _datatype = datatype; }
-        void set_buf(std::unique_ptr<char[]> buf) { _buf = std::move(buf); }
+        void set_buf(std::string buf) { _buf = std::move(buf); }
     };
 
 
@@ -71,10 +62,11 @@ namespace Messages {
 
     class HelloMessage : public Message {
     public:
-        explicit HelloMessage(int dest);
+        HelloMessage()=default;
 
-        void send() override;
-
+        void send() override {
+            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        }
     };
 
 
@@ -84,10 +76,11 @@ namespace Messages {
 
     class AcknowledgeMessage : public Message {
     public:
-        explicit AcknowledgeMessage(int dest);
+        AcknowledgeMessage()=default;
 
-        void send() override;
-
+        void send() override {
+            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        }
     };
 
 
@@ -97,10 +90,10 @@ namespace Messages {
 
     class GoodbyeMessage : public Message {
     public:
-        explicit GoodbyeMessage(int dest);
-
-        void send() override;
-
+        GoodbyeMessage()=default;
+        void send() override {
+            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        }
     };
 
 
@@ -110,14 +103,18 @@ namespace Messages {
 
     class PcapMessage : public Message {
     private:
-        Files::PcapFile _file;
+        FileData::PcapData _file;
 
     public:
-        PcapMessage(int dest, Files::PcapFile &file);
+        PcapMessage()=default;
 
-        void send() override;
+        void send() override {
+            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        }
 
-        Files::PcapFile file() { return _file; }
+        FileData::PcapData get_file_data() {
+            return _file;
+        };
     };
 
 
@@ -127,15 +124,22 @@ namespace Messages {
 
     class WordlistMessage : public Message {
     private:
-        Files::WordlistFile _file;
+        FileData::WordlistData _file;
 
     public:
-        WordlistMessage(int dest, Files::WordlistFile &file);
+        WordlistMessage()=default;
 
-        void send() override;
+        void send() override {
+            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        }
 
-        Files::WordlistFile file() { return _file; }
+        FileData::WordlistData get_file_data() {
+            return _file;
+        };
     };
 
+    inline void Message::send() {
+        // Do nothing
+    }
 }
 #endif // MESSAGE_H

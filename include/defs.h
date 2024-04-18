@@ -11,7 +11,10 @@
 const uint8_t BUFFER_SIZE{255};
 
 // name of supplied wordlist
-const std::string WORDLIST{"wordlist.txt"};
+const std::string WORDLIST_FILE{"wordlist.txt"};
+
+// name of supplied pcap file
+const std::string PCAP_FILE{"pcap"};
 
 // initial keys defs
 const std::string SSH_INIT_KEYS_DIR{"setup/ssh/initial-keys/"},
