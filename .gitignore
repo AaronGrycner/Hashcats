@@ -1,0 +1,6 @@
+cmake-build-default
+cmake-build-debug
+Hostfile
+CMakeLists.txt
+test/hashcats.log
+wordlist.txt
