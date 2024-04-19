@@ -39,27 +39,29 @@ void Apprentice::run() {
             msg_buf = messenger.get_message();
 
             if (msg_buf->type() == MessageType::WORDLIST) {
+                FileData::WordlistData wordlist;
+
                 std::shared_ptr<WordlistMessage> wordlist_msg = std::dynamic_pointer_cast<WordlistMessage>(msg_buf);
                 Logger::log("Received word list from master.");
 
                 wordlist = wordlist_msg->get_file_data();
+                write_words(wordlist);
+
                 done = true;
             }
         }
         utils::sleep(500);
     }
-
-    write_words();
 }
 
-void Apprentice::write_words() {
+void Apprentice::write_words(const FileData::WordlistData &wordlist) {
     std::ofstream f("work.txt");
 
     if (f.is_open()) {
-        f.write(wordlist.get_data().c_str(), wordlist.size());
+        f.write(wordlist.get_data().c_str(), static_cast<int>(wordlist.size()));
         f.close();
 
-        Logger::log(wordlist.get_data().c_str());
+        Logger::log("Wrote word list to file.");
     }
 
     else {

@@ -20,14 +20,14 @@ namespace FileData {
         std::string data;
 
     public:
-        FileData()=default;
-        explicit FileData(const std::string &p);
-
+        FileData() = default;
         ~FileData() = default;
 
         void read_file(const std::string &path);
 
-        size_t size() const { return data.size(); }
+        [[nodiscard]] size_t size() const { return data.size(); }
+
+        void set_data(std::string d) { this->data = std::move(d); }
 
         [[nodiscard]] std::string get_data() const { return data; }
 
@@ -37,7 +37,6 @@ namespace FileData {
     class PcapData : public FileData {
     public:
         PcapData()=default;
-        explicit PcapData(const std::string& path) : FileData(path) {}
 
     };
 
@@ -45,9 +44,8 @@ namespace FileData {
     class WordlistData : public FileData {
     public:
         WordlistData()=default;
-        explicit WordlistData(const std::string& path) : FileData(path) {}
 
-        std::vector<WordlistData> split(int chunks);
+        [[nodiscard]] std::vector<WordlistData> split(int chunks) const;
     };
 
 }

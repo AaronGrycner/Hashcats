@@ -8,8 +8,6 @@
 
 // Constructor: initializes the apprentice list and reads the word list from a predefined constant file path.
 Master::Master() {
-    wordlist.read_file(WORDLIST_FILE);
-
     apprenticeList.resize(worldsize - 1);  // Resize apprentice list to match the number of non-master processes.
 
     // Assign ranks to each apprentice, starting from 1 (0 is typically the master).
@@ -33,6 +31,8 @@ void Master::pingApprentices() {
 
 // Main running loop for the Master.
 void Master::run() {
+    FileData::WordlistData wordlist;
+
     pingApprentices();
 
     while(!done) {
@@ -49,16 +49,16 @@ void Master::run() {
         utils::sleep(500);  // Sleep for half a second to reduce CPU usage.
     }
 
-    distribute_wordlist();  // Distribute the word list to all apprentices.
+    wordlist.read_file(WORDLIST_FILE);  // Read the word list from the file.
+    distribute_wordlist(wordlist);  // Distribute the word list to all apprentices.
 }
 
-// Distributes the word list to all apprentices.
-void Master::distribute_wordlist() {
+void Master::distribute_wordlist(const FileData::WordlistData &wordlist) const {
     int counter{};
     std::vector<FileData::WordlistData> list{ wordlist.split(static_cast<int>(apprenticeList.size())) };
 
     for (ApprenticeInfo apprentice : apprenticeList) {
-        messenger.send_wordlist(apprentice.rank, list.at(counter));
+        Messenger::send_wordlist(apprentice.rank, list.at(counter));
         ++counter;
     }
 }

@@ -23,42 +23,21 @@ namespace Messages {
     // Parent class representing an MPI message with encapsulation for MPI-specific details.
     class Message {
     protected:
-        std::string _buf{};                  // Buffer for message data.
-        int _count{};                        // Number of elements in the buffer.
-
-        MPI_Datatype _datatype{MPI_CHAR};    // Type of data in the MPI message, default is char.
-        int _dest{};                         // Destination rank in the MPI communicator.
+        int _tag{};                         // MPI tag for the message.
         int _source{};                       // Source rank in the MPI communicator.
-        int _tag{};                          // Tag to identify the message type.
-        int _error{};                        // Error status of the message operation.
 
     public:
-        Message() {
-            _buf.resize(BUFFER_SIZE);
-        }
-
+        Message() = default;
         virtual ~Message() = default;
 
-        virtual void send();
-
-        // Getters
-        [[nodiscard]] std::string buf() const { return _buf; }
-        [[nodiscard]] int count() const { return _count; }
-        [[nodiscard]] MPI_Datatype datatype() const { return _datatype; }
-        [[nodiscard]] int dest() const { return _dest; }
         [[nodiscard]] int source() const { return _source; }
         [[nodiscard]] int type() const { return _tag; }
-        [[nodiscard]] int error() const { return _error; }
 
         // Setters
-        void set_dest(int dest) { _dest = dest; }
         void set_tag(int tag) { _tag = tag; }
-        void set_error(int error) { _error = error; }
         void set_source(int source) { _source = source; }
-        void set_count(int count) { _count = count; }
-        void set_datatype(MPI_Datatype datatype) { _datatype = datatype; }
-        void set_buf(std::string buf) { _buf = std::move(buf); }
     };
+
 
     //
     // HELLO
@@ -66,10 +45,9 @@ namespace Messages {
 
     class HelloMessage : public Message {
     public:
-        HelloMessage()=default;
-
-        void send() override {
-            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        explicit HelloMessage(int source) {
+            _tag = MessageType::HELLO;
+            _source = source;
         }
     };
 
@@ -79,10 +57,9 @@ namespace Messages {
 
     class AcknowledgeMessage : public Message {
     public:
-        AcknowledgeMessage()=default;
-
-        void send() override {
-            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        explicit AcknowledgeMessage(int source) {
+            _tag = MessageType::ACKNOWLEDGE;
+            _source = source;
         }
     };
 
@@ -92,9 +69,9 @@ namespace Messages {
 
     class GoodbyeMessage : public Message {
     public:
-        GoodbyeMessage()=default;
-        void send() override {
-            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+        explicit GoodbyeMessage(int source) {
+            _tag = MessageType::GOODBYE;
+            _source = source;
         }
     };
 
@@ -103,16 +80,23 @@ namespace Messages {
     //
 
     class PcapMessage : public Message {
-    public:
-        PcapMessage()=default;
+    private:
+        FileData::PcapData _data;
 
-        void send() override {
-            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+    public:
+        PcapMessage(int source, const std::string &data) {
+            _tag = MessageType::PCAP;
+            _source = source;
+            _data.set_data(data);
         }
 
         FileData::PcapData get_file_data() {
-            return FileData::PcapData(_buf);
+            return _data;
         };
+
+        void set_data(const FileData::PcapData &data) {
+            _data = data;
+        }
     };
 
     //
@@ -120,21 +104,24 @@ namespace Messages {
     //
 
     class WordlistMessage : public Message {
-    public:
-        WordlistMessage()=default;
+    private:
+        FileData::WordlistData _data;
 
-        void send() override {
-            MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
+    public:
+        WordlistMessage(int source, const std::string &data) {
+            _tag = MessageType::WORDLIST;
+            _source = source;
+            _data.set_data(data);
         }
 
         FileData::WordlistData get_file_data() {
-            return FileData::WordlistData(_buf);
+            return _data;
         };
-    };
 
-    inline void Message::send() {
-        // Do nothing
-    }
+        void set_data(const FileData::WordlistData &data) {
+            _data = data;
+        }
+    };
 }
 
 #endif

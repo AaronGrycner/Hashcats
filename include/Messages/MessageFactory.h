@@ -18,12 +18,6 @@ namespace Messages {
     public:
         static std::shared_ptr<Messages::Message> parse_MPI_Status(const MPI_Status &status, const std::string &buffer);
 
-        static HelloMessage create_hello(const std::string &buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
-        static AcknowledgeMessage create_acknowledge(const std::string &buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
-        static GoodbyeMessage create_goodbye(const std::string &buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
-        static PcapMessage create_pcap(const std::string &buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
-        static WordlistMessage create_wordlist(const std::string &buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);
-
     };
 
 } // Messages

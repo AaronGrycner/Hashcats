@@ -19,12 +19,11 @@ private:
 
     std::shared_ptr<Messages::Message> msg_buf= std::make_shared<Messages::Message>();
 
-    bool startListen();
-
 public:
     Messenger();
 
     bool check_for_message();
+    std::shared_ptr<Messages::Message> get_message();
 
     static void send_hello(int dest);
     static void send_acknowledge(int dest);
@@ -32,11 +31,6 @@ public:
     static void send_pcap(int dest, const FileData::PcapData &file);
     static void send_wordlist(int dest, const FileData::WordlistData &file);
 
-    std::shared_ptr<Messages::Message> get_message() {
-        std::shared_ptr<Messages::Message> temp = std::move(msg_buf);
-        msg_buf = std::make_shared<Messages::Message>();
-        return temp;
-    }
 };
 
 #endif //HASHCATS_MESSENGER_H

@@ -7,11 +7,6 @@
 
 namespace FileData {
 
-    FileData::FileData(const std::string &d) {
-        Logger::log("Initializing FileData with data: " + d);
-        data = d;
-    }
-
     void FileData::read_file(const std::string &path) {
         Logger::log("Attempting to read file: " + path);
         std::ifstream file(path, std::ios::binary); // Open in binary mode to avoid platform-specific line ending conversions
@@ -34,7 +29,7 @@ namespace FileData {
         }
     }
 
-    std::vector<WordlistData> WordlistData::split(int chunks) {
+    std::vector<WordlistData> WordlistData::split(int chunks) const {
         Logger::log("Splitting data into " + std::to_string(chunks) + " chunks.");
         std::vector<WordlistData> result(chunks);  // Pre-allocate vector with empty WordlistData elements
         size_t start = 0;

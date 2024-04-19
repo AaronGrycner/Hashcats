@@ -20,11 +20,6 @@ protected:
 
     Messenger messenger;
 
-    FileData::PcapData pcap;
-    FileData::WordlistData wordlist;
-
-
-
 public:
     Node();
     virtual ~Node()=0;

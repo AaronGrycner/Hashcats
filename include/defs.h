@@ -7,11 +7,8 @@
 
 #define TEST
 
-// buffer size
-const uint8_t BUFFER_SIZE{255};
-
 // name of supplied wordlist
-const std::string WORDLIST_FILE{"wordlist.txt"};
+const std::string WORDLIST_FILE{"wordlists/rockyou.txt"};
 
 // name of supplied pcap file
 const std::string PCAP_FILE{"pcap"};

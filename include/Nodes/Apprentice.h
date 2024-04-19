@@ -5,7 +5,7 @@
 
 class Apprentice : public Node {
 private:
-    void write_words();
+    static void write_words(const FileData::WordlistData &wordlist);
 
 public:
     Apprentice();

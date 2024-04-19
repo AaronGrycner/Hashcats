@@ -15,7 +15,7 @@ public:
     ~Master() override;
 
     void pingApprentices();
-    void distribute_wordlist();
+    void distribute_wordlist(const FileData::WordlistData &wordlist) const;
     void run() override;
 
 };
