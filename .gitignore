@@ -4,3 +4,5 @@ test/hashcats.log
 wordlist.txt
 /cmake-build-debug/
 /cmake-build-default/
+.idea
+CMakeLists.txt
