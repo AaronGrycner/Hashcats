@@ -1,3 +1,0 @@
-/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/Hashcats.dir
-/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/rebuild_cache.dir
