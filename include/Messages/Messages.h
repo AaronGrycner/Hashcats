@@ -7,6 +7,7 @@
 
 #include "defs.h"
 #include "FileData/FileData.h"
+#include "Logger/Logger.h"
 
 namespace Messages {
 
@@ -22,17 +23,21 @@ namespace Messages {
     // Parent class representing an MPI message with encapsulation for MPI-specific details.
     class Message {
     protected:
-        std::string _buf;   // Buffer for message data.
-        int _count{};                   // Number of elements in the buffer.
+        std::string _buf{};                  // Buffer for message data.
+        int _count{};                        // Number of elements in the buffer.
 
-        MPI_Datatype _datatype{MPI_CHAR}; // Type of data in the MPI message, default is char.
-        int _dest{};                      // Destination rank in the MPI communicator.
-        int _source{};                    // Source rank in the MPI communicator.
-        int _tag{};                       // Tag to identify the message type.
-        int _error{};                     // Error status of the message operation.
+        MPI_Datatype _datatype{MPI_CHAR};    // Type of data in the MPI message, default is char.
+        int _dest{};                         // Destination rank in the MPI communicator.
+        int _source{};                       // Source rank in the MPI communicator.
+        int _tag{};                          // Tag to identify the message type.
+        int _error{};                        // Error status of the message operation.
 
     public:
-        Message()=default;
+        Message() {
+            _buf.resize(BUFFER_SIZE);
+        }
+
+        virtual ~Message() = default;
 
         virtual void send();
 
@@ -55,7 +60,6 @@ namespace Messages {
         void set_buf(std::string buf) { _buf = std::move(buf); }
     };
 
-
     //
     // HELLO
     //
@@ -68,7 +72,6 @@ namespace Messages {
             MPI_Send(_buf.c_str(), _count, _datatype, _dest, _tag, MPI_COMM_WORLD);
         }
     };
-
 
     //
     // ACKNOWLEDGE
@@ -83,7 +86,6 @@ namespace Messages {
         }
     };
 
-
     //
     // GOODBYE
     //
@@ -96,15 +98,11 @@ namespace Messages {
         }
     };
 
-
     //
     // PCAP
     //
 
     class PcapMessage : public Message {
-    private:
-        FileData::PcapData _file;
-
     public:
         PcapMessage()=default;
 
@@ -113,19 +111,15 @@ namespace Messages {
         }
 
         FileData::PcapData get_file_data() {
-            return _file;
+            return FileData::PcapData(_buf);
         };
     };
-
 
     //
     // WORDLIST
     //
 
     class WordlistMessage : public Message {
-    private:
-        FileData::WordlistData _file;
-
     public:
         WordlistMessage()=default;
 
@@ -134,7 +128,7 @@ namespace Messages {
         }
 
         FileData::WordlistData get_file_data() {
-            return _file;
+            return FileData::WordlistData(_buf);
         };
     };
 
@@ -142,4 +136,6 @@ namespace Messages {
         // Do nothing
     }
 }
-#endif // MESSAGE_H
+
+#endif
+

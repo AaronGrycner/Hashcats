@@ -15,10 +15,6 @@ namespace utils {
         std::this_thread::sleep_for(std::chrono::milliseconds(ms));
     }
 
-    inline void init() {
-        MPI_Init(nullptr, nullptr);
-    }
-
     inline int get_world_size() {
         int world_size;
         MPI_Comm_size(MPI_COMM_WORLD, &world_size);

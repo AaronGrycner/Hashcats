@@ -21,12 +21,13 @@ namespace FileData {
 
     public:
         FileData()=default;
-        explicit FileData(std::unique_ptr<char[]> data);
         explicit FileData(const std::string &p);
 
         ~FileData() = default;
 
         void read_file(const std::string &path);
+
+        size_t size() const { return data.size(); }
 
         [[nodiscard]] std::string get_data() const { return data; }
 
@@ -34,22 +35,16 @@ namespace FileData {
 
     // Class for pcap files
     class PcapData : public FileData {
-    private:
-
     public:
         PcapData()=default;
-        explicit PcapData(std::unique_ptr<char[]> data) : FileData(std::move(data)) {}
         explicit PcapData(const std::string& path) : FileData(path) {}
 
     };
 
     // Class for wordlist files
     class WordlistData : public FileData {
-    private:
-
     public:
         WordlistData()=default;
-        explicit WordlistData(std::unique_ptr<char[]> data) : FileData(std::move(data)) {}
         explicit WordlistData(const std::string& path) : FileData(path) {}
 
         std::vector<WordlistData> split(int chunks);

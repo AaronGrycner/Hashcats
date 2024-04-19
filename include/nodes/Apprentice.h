@@ -8,7 +8,7 @@ private:
     void write_words();
 
 public:
-    Apprentice()=default;
+    Apprentice();
     ~Apprentice() override;
 
     void run() override;

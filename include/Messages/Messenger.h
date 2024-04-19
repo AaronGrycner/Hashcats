@@ -17,11 +17,9 @@ private:
     MPI_Status status{};
     MPI_Request request{};
 
-    std::string buffer;
-    std::shared_ptr<Messages::Message> msg_buf;
+    std::shared_ptr<Messages::Message> msg_buf= std::make_shared<Messages::Message>();
 
     bool startListen();
-    void reset_buffer();
 
 public:
     Messenger();
@@ -34,7 +32,11 @@ public:
     static void send_pcap(int dest, const FileData::PcapData &file);
     static void send_wordlist(int dest, const FileData::WordlistData &file);
 
-    std::shared_ptr<Messages::Message> get_message() { return msg_buf; }
+    std::shared_ptr<Messages::Message> get_message() {
+        std::shared_ptr<Messages::Message> temp = std::move(msg_buf);
+        msg_buf = std::make_shared<Messages::Message>();
+        return temp;
+    }
 };
 
 #endif //HASHCATS_MESSENGER_H

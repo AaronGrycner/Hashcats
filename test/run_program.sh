@@ -14,6 +14,9 @@ USERNAME="aaron"
 
 echo "Starting the distribution of the MPI program..."
 
+# Initialize a counter for valid hosts
+valid_hosts=1
+
 # Read lines from the hostfile. The addition of a delimiter check ensures the last line is processed.
 while IFS= read -r line || [[ -n "$line" ]]; do
     # Extract the hostname, ignoring lines that might include slots and comments
@@ -28,6 +31,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     # Use SCP to copy the MPI program to each host
     if scp "$MPI_PROGRAM" "${USERNAME}@${HOST}:${REMOTE_PATH}"; then
         echo "Successfully copied to ${HOST}."
+        ((valid_hosts++))  # Increment the count of valid hosts
     else
         echo "Failed to copy to ${HOST}, continuing to next..."
         # Optionally check directory existence and permissions
@@ -35,8 +39,8 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     fi
 done < "$HOSTFILE"
 
-echo "Starting the MPI program execution..."
-# Run the MPI program
-mpirun --hostfile "$HOSTFILE" -np 2 "$REMOTE_PATH"
+echo "Detected $valid_hosts valid hosts. Starting the MPI program execution..."
+# Run the MPI program using the counted number of valid hosts
+mpirun --hostfile "$HOSTFILE" -np "$valid_hosts" "$REMOTE_PATH"
 
 echo "Script completed."

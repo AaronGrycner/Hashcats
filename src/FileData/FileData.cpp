@@ -7,9 +7,9 @@
 
 namespace FileData {
 
-    FileData::FileData(const std::string &p) {
-        Logger::log("Initializing FileData with path: " + p);
-        read_file(p);
+    FileData::FileData(const std::string &d) {
+        Logger::log("Initializing FileData with data: " + d);
+        data = d;
     }
 
     void FileData::read_file(const std::string &path) {
@@ -32,11 +32,6 @@ namespace FileData {
         } else {
             Logger::log("File read successfully: " + path);
         }
-    }
-
-    FileData::FileData(std::unique_ptr<char[]> data) {
-        this->data = std::string(data.get(), BUFFER_SIZE);
-        Logger::log("Initialized FileData with data from unique_ptr.");
     }
 
     std::vector<WordlistData> WordlistData::split(int chunks) {

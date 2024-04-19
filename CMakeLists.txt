@@ -13,7 +13,7 @@ add_executable(Hashcats src/main.cpp src/nodes/Master.cpp src/nodes/Apprentice.c
         include/FileData/FileData.h
         src/FileData/FileData.cpp
 
-        include/Log/Logger.h
+        include/Logger/Logger.h
         src/Log/Logger.cpp
 
         src/Messages/MessageFactory.cpp
@@ -43,7 +43,7 @@ target_include_directories(Hashcats PRIVATE
                             include/FileData
                             include/Messages
                             include/nodes
-                            include/Log)
+        include/Logger)
 
 # Link with MPI
 target_link_libraries(Hashcats ${MPI_CXX_LIBRARIES})
