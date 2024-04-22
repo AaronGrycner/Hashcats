@@ -1995,3 +1995,81 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HmyakA"
+      binary: "/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HmyakA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HmyakA'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/ninja/linux/x64/ninja -v cmTC_e376a
+        [1/2] /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_e376a.dir/test_mpi.c.o -c /home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-HmyakA/test_mpi.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_e376a.dir/test_mpi.c.o -o cmTC_e376a  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XIvHgx"
+      binary: "/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XIvHgx"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XIvHgx'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/ninja/linux/x64/ninja -v cmTC_cc1d3
+        [1/2] /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_cc1d3.dir/test_mpi.cpp.o -c /home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XIvHgx/test_mpi.cpp
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_cc1d3.dir/test_mpi.cpp.o -o cmTC_cc1d3  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "CMakeLists.txt:7 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XmBDzy"
+      binary: "/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XmBDzy"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XmBDzy'
+        
+        Run Build Command(s): /home/aaron/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/241.14494.288/bin/ninja/linux/x64/ninja -v cmTC_f1ddf
+        [1/2] /usr/bin/c++  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -fdiagnostics-color=always -o CMakeFiles/cmTC_f1ddf.dir/test_mpi.cpp.o -c /home/aaron/CLionProjects/Hashcats/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XmBDzy/test_mpi.cpp
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_f1ddf.dir/test_mpi.cpp.o -o cmTC_f1ddf  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so  /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so && :
+        
+      exitCode: 0
+...
