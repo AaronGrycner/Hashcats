@@ -1,56 +1,11 @@
 Hashcats
 
-Hashcats is a robust software project focusing on networked hash computation. It combines efficient logging mechanisms with advanced hashing functionalities to offer a comprehensive solution for distributed hash computation tasks.
-Features
+Hashcats is an IN PROGRESS personal project that aims to allow the user to run any Hashcat cracking operation over a distributed node cluster simply by substituting "Hashcat [hashcat args]" for "Hashcats [hashcat args]". Hashcats handles distribution of wordlists, pcap files, and any other assets needed for the operation. Currently as a work in progress it is only working on the 22000 (WPA2) hashcat module and needs extensive testing, logging and exception handling added to it, however it can be used to crack WPA2 hashes with a wordlist and a .22000 capture file.
 
-    Logging: Integrated logging system for detailed event tracking and debugging.
-    Distributed Processing: Utilizes network nodes for distributed hash computation.
-    Modular Design: The project is structured to allow easy expansion and customization.
+Motivation
 
-Structure
+I used MPI in the execution of this program. As it currently stands this was a a much more difficult way to accomplish distributing the Hashcat work over a local network. Using ssh to run Hashcat on each node and scp to distribute files would have been easier, however I used MPI in order to learn the system and allow greater expansion of the project as I come up with new ideas for it.
 
-The project is organized into several key directories:
+Usage
 
-    include/: Contains all header files necessary for the project.
-    src/: Houses the main application source files including implementation details for messaging and node management.
-    test/: Includes scripts and resources for testing the functionalities of the application.
-
-Key Components
-
-    Logger: Implemented in src/Logger.cpp for detailed runtime information.
-    Messaging and Nodes: Modules found in src/messaging and src/nodes that handle inter-node communication and node behavior respectively.
-
-Getting Started
-Prerequisites
-
-Ensure you have CMake installed to build the project:
-
-bash
-
-sudo apt-get install cmake
-
-Building the Project
-
-To build Hashcats, run the following commands in the root directory:
-
-bash
-
-mkdir build && cd build
-cmake ..
-make
-
-This will compile the project and generate the executable.
-Running Tests
-
-To run tests, navigate to the test/ directory and execute the scripts:
-
-bash
-
-./test.sh
-
-Contributing
-
-Contributions are welcome! Please feel free to fork the repository, make changes, and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+As it stands now, the program is mildly difficult to run, requiring potential modification of the run_program.sh script to match the users environment, creation of an MPI hostfile, and setup of MPI compatible nodes, with Hashcat also installed on all of them. The provided run_program.sh script handles distribution of the executable. If you are familiar with MPI this shouldn't be difficult. However eventually I will incorporate near complete setup of the environment into the program itself, allowing minimal configuration on the users part.
