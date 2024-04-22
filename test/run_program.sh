@@ -7,7 +7,7 @@ HOSTFILE="../Hostfile/hostfile"
 MPI_PROGRAM="../cmake-build-debug/Hashcats"
 
 # The destination path on the remote machines where the MPI program should be copied
-REMOTE_PATH="/home/aaron/CLionProjects/Hashcats/cmake-build-debug/Hashcats"
+REMOTE_PATH="/home/aaron/Hashcats"
 
 # Username for the SSH/SCP commands
 USERNAME="aaron"
