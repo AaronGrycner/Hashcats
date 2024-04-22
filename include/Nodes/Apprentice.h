@@ -5,7 +5,19 @@
 
 class Apprentice : public Node {
 private:
-    static void write_words(const FileData::WordlistData &wordlist);
+    bool recvd_hccapx{false}, recvd_wordlist{false};
+
+    void run_hashcat();
+
+    void handle_hello() override;
+    void handle_wordlist() override;
+    void handle_hccapx() override;
+    void handle_success() override;
+    void handle_fail() override;
+    void handle_acknowledge() override;
+    void handle_goodbye() override;
+
+    void read_success_file();
 
 public:
     Apprentice();

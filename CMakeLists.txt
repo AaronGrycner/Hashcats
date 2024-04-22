@@ -11,7 +11,7 @@ add_executable(Hashcats src/main.cpp src/Nodes/Master.cpp src/Nodes/Apprentice.c
         src/FileData/FileData.cpp
 
         include/Logger/Logger.h
-        src/Log/Logger.cpp
+        src/Logger/Logger.cpp
 
         src/Messages/MessageFactory.cpp
         include/Messages/MessageFactory.h
@@ -29,8 +29,6 @@ add_executable(Hashcats src/main.cpp src/Nodes/Master.cpp src/Nodes/Apprentice.c
 
         include/Nodes/Node.h
         src/Nodes/Node.cpp
-
-        test/test.h
 
         include/utils.h
 )

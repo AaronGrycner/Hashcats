@@ -6,4 +6,4 @@ wordlist.txt
 /cmake-build-default/
 .idea
 /test/wordlists/
-/test/pcaps/
+/test/hccapxs/

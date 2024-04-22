@@ -8,7 +8,8 @@
 #include <utility>
 
 namespace Messages {
-    std::shared_ptr<Messages::Message> MessageFactory::parse_MPI_Status(const MPI_Status &status, const std::string &buffer) {
+    std::shared_ptr<Messages::Message>
+    MessageFactory::parse_MPI_Status(const MPI_Status &status, const std::string &buffer) {
         int count, source{status.MPI_SOURCE}, tag{status.MPI_TAG};
 
         MPI_Get_count(&status, MPI_CHAR, &count);
@@ -28,12 +29,20 @@ namespace Messages {
                 msg = std::make_shared<GoodbyeMessage>(GoodbyeMessage(status.MPI_SOURCE));
                 return msg;
 
-            case PCAP:
-                msg = std::make_shared<PcapMessage>(PcapMessage(status.MPI_SOURCE, buffer));
+            case HCCAPX:
+                msg = std::make_shared<HccapxMessage>(HccapxMessage(status.MPI_SOURCE, buffer));
                 return msg;
 
             case WORDLIST:
                 msg = std::make_shared<WordlistMessage>(WordlistMessage(status.MPI_SOURCE, buffer));
+                return msg;
+
+            case SUCCESS:
+                msg = std::make_shared<SuccessMessage>(SuccessMessage(status.MPI_SOURCE, buffer));
+                return msg;
+
+            case FAIL:
+                msg = std::make_shared<FailMessage>(FailMessage(status.MPI_SOURCE));
                 return msg;
 
             default:

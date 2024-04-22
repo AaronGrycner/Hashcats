@@ -31,12 +31,14 @@ namespace FileData {
 
         [[nodiscard]] std::string get_data() const { return data; }
 
+        void write_file(const std::string &path) const;
+
     };
 
     // Class for pcap files
-    class PcapData : public FileData {
+    class HccapxData : public FileData {
     public:
-        PcapData()=default;
+        HccapxData()=default;
 
     };
 

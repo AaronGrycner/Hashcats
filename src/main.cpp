@@ -1,6 +1,7 @@
-#include "../test/test.h"
-
-// for this preliminary version, a hostfile and a wordlist should be placed in the same directory as the executable
+#include "Master.h"
+#include "Apprentice.h"
+#include "utils.h"
+#include "Logger.h"
 
 // TODO
 // -- add environment setup to the makefile
@@ -13,10 +14,23 @@
 
 int main()
 {
+    Logger::init();
 
-#ifdef TEST
-    messageTest();
-#endif
+    MPI_Init(nullptr, nullptr);
+
+    if (utils::get_rank() == 0) {
+        Logger::log("Master node.");
+        Master node;
+        node.run();
+    }
+
+    else {
+        Logger::log("Apprentice node.");
+        Apprentice node;
+        node.run();
+    }
+
+    MPI_Finalize();
 
     return 0;
 }

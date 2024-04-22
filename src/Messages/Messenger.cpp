@@ -9,8 +9,8 @@
 using namespace Messages;
 
 Messenger::Messenger() {
-    Logger::log("Initializing Messenger on rank: " + std::to_string(rank));
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    Logger::log("Initializing Messenger on rank: " + std::to_string(rank));
 }
 
 bool Messenger::check_for_message() {
@@ -61,15 +61,26 @@ void Messenger::send_goodbye(int dest) {
     Logger::log("Goodbye message sent to " + std::to_string(dest));
 }
 
-void Messenger::send_pcap(int dest, const FileData::PcapData &file) {
-    Logger::log("Sending 'PCAP' data to destination: " + std::to_string(dest) + "; Data size: " + std::to_string(file.get_data().size()) + " bytes");
-    MPI_Send(file.get_data().data(), static_cast<int>(file.get_data().size()), MPI_CHAR, dest, static_cast<int>(MessageType::PCAP), MPI_COMM_WORLD);
-    Logger::log("PCAP data sent to " + std::to_string(dest));
-}
-
 void Messenger::send_wordlist(int dest, const FileData::WordlistData &file) {
     Logger::log("Sending 'Wordlist' data to destination: " + std::to_string(dest) + "; Data size: " + std::to_string(file.get_data().size()) + " bytes");
     MPI_Send(file.get_data().data(), static_cast<int>(file.get_data().size()), MPI_CHAR, dest, static_cast<int>(MessageType::WORDLIST), MPI_COMM_WORLD);
     Logger::log("Wordlist data sent to " + std::to_string(dest));
 }
 
+void Messenger::send_hccapx(int dest, const FileData::HccapxData &file) {
+    Logger::log("Sending 'Hccapx' data to destination: " + std::to_string(dest) + "; Data size: " + std::to_string(file.get_data().size()) + " bytes");
+    MPI_Send(file.get_data().data(), static_cast<int>(file.get_data().size()), MPI_CHAR, dest, static_cast<int>(MessageType::HCCAPX), MPI_COMM_WORLD);
+    Logger::log("Hccapx data sent to " + std::to_string(dest));
+}
+
+void Messenger::send_success(int dest, const std::string &password) {
+    Logger::log("Sending 'Success' message to destination: " + std::to_string(dest) + "; Data size: " + std::to_string(password.size()) + " bytes");
+    MPI_Send(password.data(), static_cast<int>(password.size()), MPI_CHAR, dest, static_cast<int>(MessageType::SUCCESS), MPI_COMM_WORLD);
+    Logger::log("Success message sent to " + std::to_string(dest));
+}
+
+void Messenger::send_fail(int dest) {
+    Logger::log("Sending 'Fail' message to destination: " + std::to_string(dest));
+    MPI_Send(nullptr, 0, MPI_CHAR, dest, static_cast<int>(MessageType::FAIL), MPI_COMM_WORLD);
+    Logger::log("Fail message sent to " + std::to_string(dest));
+}

@@ -8,21 +8,18 @@
 #define TEST
 
 // name of supplied wordlist
-const std::string WORDLIST_FILE{"wordlists/rockyou.txt"};
+const std::string WORDLIST_FILE{"wordlists/wordlist.txt"};
 
 // name of supplied pcap file
-const std::string PCAP_FILE{"pcap"};
+const std::string HCCAPX_FILE{"hccapxs/nokia.hc22000"};
 
-// initial keys defs
-const std::string SSH_INIT_KEYS_DIR{"setup/ssh/initial-keys/"},
-                    SSH_INIT_KEY_PUBLIC{SSH_INIT_KEYS_DIR + "init_key.pub"},
-                    SSH_INIT_KEY_PRIVATE{SSH_INIT_KEYS_DIR + "init_key"};
+// success file
+const std::string SUCCESS_FILE{"/home/aaron/success.txt"};
 
-// final keys defs
-const std::string SSH_FINAL_KEYS_DIR{"setup/ssh/final-keys/"},
-                    SSH_FINAL_KEY_PUBLIC{SSH_FINAL_KEYS_DIR + "final_key.pub"},
-                    SSH_FINAL_KEY_PRIVATE{SSH_FINAL_KEYS_DIR + "final_key"};
+// hashcat command
+const std::string HASHCAT_COMMAND{"hashcat -m 22000 -o " + SUCCESS_FILE + " " + HCCAPX_FILE + " " + WORDLIST_FILE};
 
-const std::string SSH_USER{"mpi"};
+// hashcat potfile
+const std::string HASHCAT_POTFILE{"/home/aaron/.local/share/hashcat/hashcat.potfile"}, DELETE_POTFILE{"rm " + HASHCAT_POTFILE};
 
 #endif //DEFS_H

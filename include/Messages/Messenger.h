@@ -17,7 +17,7 @@ private:
     MPI_Status status{};
     MPI_Request request{};
 
-    std::shared_ptr<Messages::Message> msg_buf= std::make_shared<Messages::Message>();
+    std::shared_ptr<Messages::Message> msg_buf = std::make_shared<Messages::Message>();
 
 public:
     Messenger();
@@ -28,8 +28,10 @@ public:
     static void send_hello(int dest);
     static void send_acknowledge(int dest);
     static void send_goodbye(int dest);
-    static void send_pcap(int dest, const FileData::PcapData &file);
     static void send_wordlist(int dest, const FileData::WordlistData &file);
+    static void send_hccapx(int dest, const FileData::HccapxData &file);
+    static void send_success(int dest, const std::string &password);
+    static void send_fail(int dest);
 
 };
 

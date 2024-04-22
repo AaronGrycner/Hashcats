@@ -29,6 +29,18 @@ namespace FileData {
         }
     }
 
+    void FileData::write_file(const std::string &path) const {
+        std::ofstream file(path);
+
+        if (!file) {
+            Logger::log("Failed to open file: " + path);
+            return;
+        }
+
+        file << data;
+        Logger::log("Data written to file: " + path);
+    }
+
     std::vector<WordlistData> WordlistData::split(int chunks) const {
         Logger::log("Splitting data into " + std::to_string(chunks) + " chunks.");
         std::vector<WordlistData> result(chunks);  // Pre-allocate vector with empty WordlistData elements

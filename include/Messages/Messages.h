@@ -16,13 +16,16 @@ namespace Messages {
         HELLO,        // Sent by the master to apprentices to check if they are online.
         ACKNOWLEDGE,  // Sent in response to a HELLO, acknowledging receipt.
         GOODBYE,      // Indicates a connection or session is being closed.
+        SUCCESS,      // Indicates a successful operation. The message buffer contains the found work
+        FAIL,         // Indicates unsuccessful cracking attempt, buffer is empty
         WORDLIST,         // Contains a list of words to be processed by an apprentice.
-        PCAP          // Contains a pcap file for processing.
+        HCCAPX          // Contains a pcap file for processing.
     };
 
     // Parent class representing an MPI message with encapsulation for MPI-specific details.
     class Message {
     protected:
+        std::string _data;
         int _tag{};                         // MPI tag for the message.
         int _source{};                       // Source rank in the MPI communicator.
 
@@ -36,6 +39,7 @@ namespace Messages {
         // Setters
         void set_tag(int tag) { _tag = tag; }
         void set_source(int source) { _source = source; }
+        std::string get_data() { return _data; }
     };
 
 
@@ -79,24 +83,16 @@ namespace Messages {
     // PCAP
     //
 
-    class PcapMessage : public Message {
-    private:
-        FileData::PcapData _data;
-
+    class HccapxMessage : public Message {
     public:
-        PcapMessage(int source, const std::string &data) {
-            _tag = MessageType::PCAP;
+        HccapxMessage(int source, std::string buffer) {
+            _tag = MessageType::HCCAPX;
             _source = source;
-            _data.set_data(data);
+            _data = std::move(buffer);
         }
 
-        FileData::PcapData get_file_data() {
-            return _data;
-        };
 
-        void set_data(const FileData::PcapData &data) {
-            _data = data;
-        }
+
     };
 
     //
@@ -104,22 +100,36 @@ namespace Messages {
     //
 
     class WordlistMessage : public Message {
-    private:
-        FileData::WordlistData _data;
-
     public:
-        WordlistMessage(int source, const std::string &data) {
+        WordlistMessage(int source, std::string buffer) {
             _tag = MessageType::WORDLIST;
             _source = source;
-            _data.set_data(data);
+            _data = std::move(buffer);
         }
+    };
 
-        FileData::WordlistData get_file_data() {
-            return _data;
-        };
+    //
+    // SUCCESS
+    //
 
-        void set_data(const FileData::WordlistData &data) {
-            _data = data;
+    class SuccessMessage : public Message {
+    public:
+        SuccessMessage(int source, std::string buffer) {
+            _tag = MessageType::SUCCESS;
+            _source = source;
+            _data = std::move(buffer);
+        }
+    };
+
+    //
+    // FAIL
+    //
+
+    class FailMessage : public Message {
+    public:
+        explicit FailMessage(int source) {
+            _tag = MessageType::FAIL;
+            _source = source;
         }
     };
 }

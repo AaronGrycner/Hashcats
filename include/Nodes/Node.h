@@ -13,6 +13,8 @@ protected:
     int rank{}, worldsize{};
     bool done{false};
 
+    std::string correct_password{};
+
     MPI_Request request{};
     MPI_Status status{};
 
@@ -20,12 +22,19 @@ protected:
 
     Messenger messenger;
 
+    void handle_message();
+
+    virtual void handle_hello()=0;
+    virtual void handle_wordlist()=0;
+    virtual void handle_hccapx()=0;
+    virtual void handle_goodbye()=0;
+    virtual void handle_success()=0;
+    virtual void handle_fail()=0;
+    virtual void handle_acknowledge()=0;
+
 public:
     Node();
     virtual ~Node()=0;
-
-    [[nodiscard]] int getRank() const { return rank; }
-    [[nodiscard]] int getWorldSize() const { return worldsize; }
 
     virtual void run()=0;
 
